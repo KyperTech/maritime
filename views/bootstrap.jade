@@ -45,40 +45,42 @@ block content
                           a(href='#') One more separated link
 
     #myCarousel.carousel.slide(data-ride='carousel')
-      ol.carousel-indicators
-        li.active(data-target='#myCarousel', data-slide-to='0')
-        li(data-target='#myCarousel', data-slide-to='1')
-        li(data-target='#myCarousel', data-slide-to='2')
-      .carousel-inner
-        .item.active
-          img(src='/images/internetcafe1.jpg', alt='First slide')
-          .container
-            .carousel-caption
-              h1 Example headline.
-              p
-                | Note: If you're viewing this page via a
-                code file://
-                | URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
-              p
-                a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
-        .item
-          img(src='/images/detail03.jpg', alt='Second slide')
-          .container
-            .carousel-caption
-              h1 Another example headline.
-              p
-                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-              p
-                a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
-        .item
-          img(src='/images/interior02.jpg', alt='Third slide')
-          .container
-            .carousel-caption
-              h1 One more for good measure.
-              p
-                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
-              p
-                a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
+      each car, i in bootstrap
+        ol.carousel-indicators
+          if car.carousel.slide1.on 
+            li.active(data-target='#myCarousel', data-slide-to='0')
+          if car.carousel.slide2.on
+            li(data-target='#myCarousel', data-slide-to='1')
+          if car.carousel.slide3.on
+            li(data-target='#myCarousel', data-slide-to='2')
+        .carousel-inner
+          if car.carousel.slide1.on
+            .item.active
+              img(src='/images/#{car.carousel.slide1.img}', alt='First slide')
+              .container
+                .carousel-caption
+                  h1= car.carousel.slide1.headline
+                  p= car.carousel.slide1.subtext
+                  p
+                    a.btn.btn-lg.btn-primary(href='#', role='button')= car.carousel.slide1.buttonText
+          if car.carousel.slide2.on
+            .item
+              img(src='/images/#{car.carousel.slide2.img}', alt='Second slide')
+              .container
+                .carousel-caption
+                  h1= car.carousel.slide2.headline
+                  p=  car.carousel.slide3.subtext
+                  p
+                    a.btn.btn-lg.btn-primary(href='#', role='button')= car.carousel.slide2.buttonText
+          if car.carousel.slide3.on
+            .item
+              img(src='/images/#{car.carousel.slide3.img}', alt='Third slide')
+              .container
+                .carousel-caption
+                  h1= car.carousel.slide3.headline
+                  p= car.carousel.slide3.subtext
+                  p
+                    a.btn.btn-lg.btn-primary(href='#', role='button')= car.carousel.slide3.buttonText
       a.left.carousel-control(href='#myCarousel', data-slide='prev')
         span.glyphicon.glyphicon-chevron-left
       a.right.carousel-control(href='#myCarousel', data-slide='next')

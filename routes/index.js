@@ -33,7 +33,6 @@ exports.bootstrap = function(db){
 			res.render('bootstrap', {
 				"bootstrap": docs
 			});
-			console.log(docs);
 		});
 	};
 };
