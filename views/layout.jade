@@ -5,36 +5,37 @@ html
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='/css/carousel.css')
+    link(rel='stylesheet', href='/css/user.css')
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.min.js')
     script(src='/js/holder.js')
   body
-  .navbar-wrapper
-      .container
-        .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-          .container
-            .navbar-header
-              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                span.sr-only Toggle navigation
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
-              each component, i in bootstrap
-                title=component.company
-                a.navbar-brand(href='#')= component.company
-            .navbar-collapse.collapse
-              ul.nav.navbar-nav
-                each nav, n in bootstrap
-                  if nav.navTab.home
+  each com, c in bootstrap
+    .navbar-wrapper
+        .container
+          .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+            .container
+              .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                  span.sr-only Toggle navigation
+                  span.icon-bar
+                  span.icon-bar
+                  span.icon-bar
+                each component, i in bootstrap
+                  title=component.company
+                  a.navbar-brand(href='#')= component.company
+              .navbar-collapse.collapse
+                ul.nav.navbar-nav
+                  if com.navTab.home
                     li.active
                       a(href='#') Home
-                  if nav.navTab.about
+                  if com.navTab.about
                     li
                       a(href='#about') About
-                  if nav.navTab.contact
+                  if com.navTab.contact
                     li
                       a(href='#contact') Contact
-                  if nav.navTab.dropdown
+                  if com.navTab.dropdown
                     li.dropdown
                       a.dropdown-toggle(href='#', data-toggle='dropdown')
                         | Dropdown
@@ -52,4 +53,4 @@ html
                           a(href='#') Separated link
                         li
                           a(href='#') One more separated link
-    block content
+      block content
