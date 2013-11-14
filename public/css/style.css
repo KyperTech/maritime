@@ -59,7 +59,7 @@ header.sticky { margin: 0; position: fixed; top: 0; z-index: 100; }
 #header h6 i, .top-bar h6 i { background:#f1f1f1; color:#545454; display:inline; margin:7px; padding:7px; border-radius:30px; vertical-align:middle;}
 .top-bar h6 { margin:0 16px 0 0; font-size:14px;}
 .top-bar h6 i { padding:3px; font-size:16px;} 
-.logo { padding-top:6px; padding-bottom:3px; font-family: 'icomoon'; font-size:40px; color:#9AA6AF; font-weight: lighter; text-transform: none; line-height: 1;	-webkit-font-smoothing: antialiased;}
+.logo { padding-top:6px; padding-bottom:0px; font-family: 'icomoon'; font-size:30px; color:#9AA6AF; font-weight: lighter; text-transform: none; line-height: 1;	-webkit-font-smoothing: antialiased;}
 .logo img { max-width:100%; }
 #site-title { text-transform:capitalize; font-weight:900; line-height:1;}
 #site-title small { font-size:16px; line-height:1.2; display:block; font-weight:normal;  letter-spacing: -0.02em; }
