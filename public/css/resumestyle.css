@@ -1,0 +1,419 @@
+/*------------------------------------------------------------------
+Project:	CV Gris  (ResumeStyle)
+Version:	1.0
+Created: 		24/02/2013
+Last change:	24/02/2013
+-------------------------------------------------------------------*/
+
+body {
+	background-color: #F0F0F0;
+	background-image: url(../img/bg.jpg);
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.btn-square {
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+}
+
+.btn-grey {
+	background-color: #444444;
+	background-image: none;
+	color: #ccc;
+	font-size: 12px;
+    text-shadow: none;
+	border-width: 0;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+}
+
+.btn-grey:hover,
+.btn-grey:focus,
+.btn-grey:active,
+.btn-grey.active,
+.btn-grey.disabled,
+.btn-grey[disabled] {
+	background-color: #333333;
+	color: #f0f0f0;
+}
+
+.btn-dark {
+	color: #ffffff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #555555;
+	background-image: -moz-linear-gradient(top, #666666, #444444);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#666666), to(#444444));
+	background-image: -webkit-linear-gradient(top, #666666, #444444);
+	background-image: -o-linear-gradient(top, #666666, #444444);
+	background-image: linear-gradient(to bottom, #666666, #444444);
+	background-repeat: repeat-x;
+	border-color: #555 #555 #333;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active,
+.btn-dark.active,
+.btn-dark.disabled,
+.btn-dark[disabled] {
+	color: #ffffff;
+	background-color: #444444;
+}
+
+.contact {
+    background-color: #707070;
+    background-color: rgba(0, 0, 0, 0.5);
+	color: #f0f0f0;
+	padding: 0 20px;
+}
+
+.contact-title {
+	margin: 50px auto 0;
+	padding: 7px 30px;
+	text-align: center;
+	color: #f0f0f0;
+	cursor: pointer;
+    background-color: #575757;
+    background-color: rgba(0, 0, 0, 0.6);
+	width: 100px;
+    -webkit-border-radius: 6px 6px 0 0;
+       -moz-border-radius: 6px 6px 0 0;
+            border-radius: 6px 6px 0 0;
+}
+
+.contact textarea,
+.contact input[type="text"],
+.contact input[type="email"] {
+    background-color: #575757;
+	background-color: rgba(0, 0, 0, 0.3);
+	border: 1px solid #999999;
+	color: #f0f0f0;
+}
+
+.form-horizontal {
+	margin: 40px 0;
+}
+
+.footer {
+	padding: 20px 0;
+	text-align: center;
+	color: #f0f0f0;
+    background-color: #575757;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #eee;
+}
+
+.header {
+    background-color: #f0f0f0;
+    background-image: url(../img/bg-top.jpg);
+	border-bottom: 1px solid #dddddd;
+	box-shadow:  0 0 3px rgba(190, 190, 190, 0.75);
+	top: 0;
+	right: 0;
+	left: 0;
+    z-index: 1030;
+	height: auto;
+	padding: 20px 0;
+	margin-bottom: 20px;
+}
+
+.header img {
+	float: left;
+	height: 85px;
+	margin-right: 15px;
+	padding: 11px;
+}
+
+.header li {
+    list-style-type: none;
+	padding: 4px 0;
+}
+   
+.header ul {
+	margin-top: 5px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.left-column {
+	text-align: center;
+}
+
+.left-block {
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.num {
+	position: absolute;
+	bottom: 1px;
+	right: 10px;
+	z-index: 1;
+	font-weight: bold;
+	color: #999;
+}
+
+.right-block {
+    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.4);
+	border: 1px solid #dddddd;
+	padding: 15px 10px; /*bottom spacing,  */
+	margin: 10px 0;
+	position:relative;
+}
+
+.right-block:before{
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 50px;
+	height: 0;
+	border-color: transparent;/* #ddd #ddd #ddd #ddd 4 Sides "triangles" (use transparent to eliminate triangle)  */
+	border-style: solid;
+	border-width: 21px;
+
+}
+
+.right-block:after{
+	content: '';
+  text-align:center;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 50px;
+	height: 0;
+	border-color: transparent;/*#ebebeb #ebebeb #ebebeb #ebebeb;*/
+	border-style: solid;
+	border-width: 20px;
+  line-height: 7px;
+}
+
+.right-block h4 {
+	word-wrap:break-word;
+}
+
+.right-column h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	margin-left: 20px;
+}
+	/*Progress bars */
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@-moz-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@-ms-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@-o-keyframes progress-bar-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.progress {
+  height: 18px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: -ms-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9));
+  background-image: -webkit-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: -o-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-repeat: repeat-x;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#f9f9f9', GradientType=0);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-left: 10px; /*Spacing to the left of progress bar  /*
+  /*margin-top: 12px;*/
+
+}
+
+.progress .bar {
+  width: 0;
+  height: 18px;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #0e90d2;
+  background-image: -moz-linear-gradient(top, #149bdf, #0480be);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#149bdf), to(#0480be));
+  background-image: -webkit-linear-gradient(top, #149bdf, #0480be);
+  background-image: -o-linear-gradient(top, #149bdf, #0480be);
+  background-image: linear-gradient(top, #149bdf, #0480be);
+  background-image: -ms-linear-gradient(top, #149bdf, #0480be);
+  background-repeat: repeat-x;
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#149bdf', endColorstr='#0480be', GradientType=0);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: width 0.6s ease;
+     -moz-transition: width 0.6s ease;
+      -ms-transition: width 0.6s ease;
+       -o-transition: width 0.6s ease;
+          transition: width 0.6s ease;
+
+}
+
+.progress-striped .bar {
+  background-color: #149bdf;
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  -webkit-background-size: 40px 40px;
+     -moz-background-size: 40px 40px;
+       -o-background-size: 40px 40px;
+          background-size: 40px 40px;
+}
+.timeperiod {
+  position:absolute;
+  bottom: 140px;
+  right: 30px;
+  width: 50px;
+  height: 0;
+  
+text-align: right;
+font-size: 13px;
+margin-right: 20px;
+}
+
+.labelkey,
+.badge {
+  display: inline-block;
+  padding: 2px 2px;
+  font-size: 11.844px;
+  font-weight: bold;
+  line-height: 14px;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #999999;
+
+}
+.labelkey {
+
+    padding: 1px 3px 2px; /* above word, sides of word, below word*/
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+position:relative;
+bottom: 30px;
+  left: 330px;
+    text-decoration: none;
+  }
+  .badge {
+  padding-right: 9px;
+  padding-left: 9px;
+  -webkit-border-radius: 9px;
+     -moz-border-radius: 9px;
+          border-radius: 9px;
+}
+  
+a.labelkey:hover,
+a.labelkey:focus,
+a.badge:hover,
+a.badge:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+  .instructions{
+    position:relative;
+  bottom: -40px;
+  left: 340px;
+  width: 220px;
+  height: 50px;
+  }
+
+  .item-period {
+    float: right;
+    font-size: 12px;
+    border: 1px 
+    solid #ddd; 
+    font-size: 12px; 
+    padding:2px 5px 2px 5px;}
+
+    .pdf {
+      width: 50px; 
+      display:block; height: 50px; 
+      background-image: url(assets/img/pdf_icon.png); 
+      cursor: pointer; 
+      margin-top:10px;
+    }
+
+    .portfolio1{
+    position:relative;
+  bottom: 0px;
+  left: 30px;
+  width: 220px;
+  height: 150px;
+  border: 3px solid #707070;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+  -webkit-transition: all 0.2s ease-in-out;
+     -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+}

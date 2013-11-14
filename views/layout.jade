@@ -5,51 +5,67 @@ html
     link(rel='stylesheet', href='/css/bootstrap.min.css')
     link(rel='stylesheet', href='/css/bootstrap-theme.min.css')
     link(rel='stylesheet', href='/css/carousel.css')
+    link(rel='stylesheet', href='/css/skeleton.css')
+    link(rel='stylesheet', href='/css/style.css')
     script(src='/js/jquery.js')
     script(src='/js/bootstrap.min.js')
     script(src='/js/holder.js')
+    script(src='/js/jquery.sticky.js')
+    script(src='/js/mexin-custom.js')
+    script(src='/js/index-browserify.js')
   body
-  .navbar-wrapper
-      .container
-        .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
-          .container
-            .navbar-header
-              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-                span.sr-only Toggle navigation
-                span.icon-bar
-                span.icon-bar
-                span.icon-bar
-              each component, i in bootstrap
-                title=component.company
-                a.navbar-brand(href='#')= component.company
-            .navbar-collapse.collapse
-              ul.nav.navbar-nav
-                each nav, n in bootstrap
-                  if nav.navTab.home
-                    li.active
-                      a(href='#') Home
-                  if nav.navTab.about
+    #wrap.colorskin-1
+        .top-bar
+            .container
+            .top-links
+                i.icomoon-mail
+                a(href='mailto:php12@case.edu') php12@case.edu
+                | |
+                i.icomoon-print
+                a(href='https://www.dropbox.com/s/8f1dbu9sruii8zk/PrescottPrueResume.pdf') Print Version
+                | |
+                i.icomoon-phone
+            .socailfollow
+                a.google(href='https://plus.google.com/u/1/')
+                i.icomoon-google
+                a.twitter(href='#')
+                i.icomoon-twitter
+          //
+            Social Follow - End 
+        //
+          Container - End 
+      //
+        Top Bar - End 
+      #sticker-sticky-wrapper.sticky-wrapper(style='height: 83px;')
+        #sticker(style='')
+          header#header
+            .container
+              .four.columns.logo
+                a(href='/') Maritime Autowash
+              nav#nav-wrap.nav-wrap1.twelve.columns
+                #menu-icon
+                  i.icomoon-menu-6
+                  | Menu -
+                  span.mn-clk Navigation
+                #search-form
+                  form(action='#', method='get')
+                    input#search-box.search-text-box(type='text', style='width: 1px; color: transparent;')
+                ul#nav
+                  li.current
+                    a(href='/') Home
+                  li
+                    a(href='') Services
+                    ul
+                      li
+                        a(href='kyper') Kyper
+                    //
+                      End of portfolio 
                     li
-                      a(href='#about') About
-                  if nav.navTab.contact
-                    li
-                      a(href='#contact') Contact
-                  if nav.navTab.dropdown
-                    li.dropdown
-                      a.dropdown-toggle(href='#', data-toggle='dropdown')
-                        | Dropdown
-                        b.caret
-                      ul.dropdown-menu
-                        li
-                          a(href='#') Action
-                        li
-                          a(href='#') Another action
-                        li
-                          a(href='#') Something else here
-                        li.divider
-                        li.dropdown-header Nav header
-                        li
-                          a(href='#') Separated link
-                        li
-                          a(href='#') One more separated link
+                      a(href='about') About
+              //nav-wrap 
+            #search-form2
+              form(action='#', method='get')
+                input.search-text-box2(type='text')
+          //end-header 
+
     block content
