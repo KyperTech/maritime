@@ -1,56 +1,153 @@
 extends layout
-
 block content
+  body
+    .navbar-wrapper
+      .container
+        .navbar.navbar-inverse.navbar-static-top(role='navigation')
+          .container
+            .navbar-header
+              button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              each component, i in bootstrap
+                a.navbar-brand(href='#')= component.company
+            .navbar-collapse.collapse
+              ul.nav.navbar-nav
+                each nav, n in bootstrap
+                  if nav.navTab.home
+                    li.active
+                      a(href='#') Home
+                  if nav.navTab.about
+                    li
+                      a(href='#about') About
+                  if nav.navTab.contact
+                    li
+                      a(href='#contact') Contact
+                  if nav.navTab.dropdown
+                    li.dropdown
+                      a.dropdown-toggle(href='#', data-toggle='dropdown')
+                        | Dropdown
+                        b.caret
+                      ul.dropdown-menu
+                        li
+                          a(href='#') Action
+                        li
+                          a(href='#') Another action
+                        li
+                          a(href='#') Something else here
+                        li.divider
+                        li.dropdown-header Nav header
+                        li
+                          a(href='#') Separated link
+                        li
+                          a(href='#') One more separated link
 
-	head
-		link(class="cssdeck", rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css")
-	body
-		.container-narrow
-			.masthead
-				ul.nav.nav-pills.pull-right
-					li.active
-						a(href='#')=title
-					li
-						a(href='#') About
-					li
-						a(href='#') Contact
-			h3.muted Project name
-			hr
-			.jumbotron
-				h1 Super awesome marketing speak!
-				p.lead Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-				a.btn.btn-large.btn-success(href="#myModal", role="button", data-toggle="modal") Sign up today
-			hr
-			.row-fluid.marketing
-				.span6
-					h4 Subheading
-					p
-						| Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-					h4 Subheading
-					p
-						| Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
-					h4 Subheading
-					p Maecenas sed diam eget risus varius blandit sit amet non magna.
-				.span6
-					h4 Subheading
-					p
-						| Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
-					h4 Subheading
-					p
-						| Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
-					h4 Subheading
-					p Maecenas sed diam eget risus varius blandit sit amet non magna.
-			hr
-			.footer
-				p © Company 2012
-		#myModal.modal.hide.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
-			.modal-header
-				button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
-				h3#myModalLabel Modal header
-			.modal-body
-				p One fine body…
-			.modal-footer
-				button.btn(data-dismiss='modal', aria-hidden='true') Close
-				button.btn.btn-primary Save changes
-		script(class="cssdeck", src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js")
-		script(src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/bootstrap.min.js ")
+    #myCarousel.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#myCarousel', data-slide-to='0')
+        li(data-target='#myCarousel', data-slide-to='1')
+        li(data-target='#myCarousel', data-slide-to='2')
+      .carousel-inner
+        .item.active
+          img(src='/images/internetcafe1.jpg', alt='First slide')
+          .container
+            .carousel-caption
+              h1 Example headline.
+              p
+                | Note: If you're viewing this page via a
+                code file://
+                | URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.
+              p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Sign up today
+        .item
+          img(src='/images/detail03.jpg', alt='Second slide')
+          .container
+            .carousel-caption
+              h1 Another example headline.
+              p
+                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Learn more
+        .item
+          img(src='/images/interior02.jpg', alt='Third slide')
+          .container
+            .carousel-caption
+              h1 One more for good measure.
+              p
+                | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              p
+                a.btn.btn-lg.btn-primary(href='#', role='button') Browse gallery
+      a.left.carousel-control(href='#myCarousel', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left
+      a.right.carousel-control(href='#myCarousel', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right
+
+    .container.marketing
+
+      .row
+        .col-lg-4
+          img.img-circle(data-src='holder.js/140x140', alt='Generic placeholder image')
+          h2 Heading
+          p
+            | Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+          p
+            a.btn.btn-default(href='#', role='button') View details »
+
+        .col-lg-4
+          img.img-circle(data-src='holder.js/140x140', alt='Generic placeholder image')
+          h2 Heading
+          p
+            | Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+          p
+            a.btn.btn-default(href='#', role='button') View details »
+
+        .col-lg-4
+          img.img-circle(data-src='holder.js/140x140', alt='Generic placeholder image')
+          h2 Heading
+          p
+            | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+          p
+            a.btn.btn-default(href='#', role='button') View details »
+
+      hr.featurette-divider
+      .row.featurette
+        .col-md-7
+          h2.featurette-heading
+            | First featurette heading.
+            span.text-muted It'll blow your mind.
+          p.lead
+            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        .col-md-5
+          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+      hr.featurette-divider
+      .row.featurette
+        .col-md-5
+          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+        .col-md-7
+          h2.featurette-heading
+            | Oh yeah, it's that good.
+            span.text-muted See for yourself.
+          p.lead
+            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+      hr.featurette-divider
+      .row.featurette
+        .col-md-7
+          h2.featurette-heading
+            | And lastly, this one.
+            span.text-muted Checkmate.
+          p.lead
+            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        .col-md-5
+          img.featurette-image.img-responsive(data-src='holder.js/500x500/auto', alt='Generic placeholder image')
+      hr.featurette-divider
+
+      footer
+        p.pull-right
+          a(href='#') Back to top
+        p
+          | © 2013 Company, Inc. ·
+          a(href='#') Privacy
+          | ·
+          a(href='#') Terms

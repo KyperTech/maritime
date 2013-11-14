@@ -1,1 +1,3 @@
-*data/
+data/
+public/images/
+.DS_Store

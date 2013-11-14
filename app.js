@@ -10,7 +10,7 @@ var http = require('http');
 var path = require('path');
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/template1');
+var db = monk('mongodb://mvanlonden:Cactus1!humus@paulo.mongohq.com:10043/DrywallTester');
 
 var app = express();
 
@@ -39,7 +39,7 @@ app.get('/users', user.list);
 app.get('/helloworld', routes.helloworld);
 app.get('/userlist', routes.userlist(db));
 app.get('/newuser', routes.newuser);
-app.get('/bootstrap', routes.bootstrap);
+app.get('/bootstrap', routes.bootstrap(db));
 
 app.post('/adduser', routes.adduser(db));
 

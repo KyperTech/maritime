@@ -26,9 +26,17 @@ exports.newuser = function(req, res){
 	res.render('newuser', {title: 'Add New User'});
 };
 
-exports.bootstrap = function(req, res){
-	res.render('bootstrap', {title: 'Melchert'});
-}
+exports.bootstrap = function(db){
+	return function(req, res){
+		var collection = db.get('projects');
+		collection.find({},{},function(e,docs){
+			res.render('bootstrap', {
+				"bootstrap": docs
+			});
+			console.log(docs);
+		});
+	};
+};
 
 exports.adduser = function(db){
 	return function(req, res){
