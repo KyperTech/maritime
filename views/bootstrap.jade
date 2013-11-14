@@ -1,8 +1,6 @@
 extends layout
 block content
   body
-    
-
     #myCarousel.carousel.slide(data-ride='carousel')
       each car, i in bootstrap
         ol.carousel-indicators
@@ -46,7 +44,41 @@ block content
         span.glyphicon.glyphicon-chevron-right
 
     .container.marketing
-
+      .row 
+        .col-mg-9
+          h3 Welcome to Maritime Autowash
+          p Maritime Autowash is a full service carwash utilizing state of the art hybrid technology.
+            |We recycle 
+            strong 97% 
+            | of our wash water, and use only biodegradable detergents and waxes,
+            |making us a leader in evironmental conservation.
+      .row 
+        .col-lg-4
+          h4 Open Hours
+          table.table.table-striped
+            thead
+              tr
+                th Week Day
+                th Hours
+            tbody
+              tr
+                td Monday - Friday
+                td 7:30 AM - 5:30 PM
+              tr
+                td Saturday
+                td 7:30 AM - 5:30 PM
+              tr
+                td Sunday
+                td 10:00 AM - 3:00 PM
+        .col-lg-6        
+          h4 Customer Testimonals
+          blockquote
+            p 
+              |Speechless!! The team at Maritime Auto Wash did an amazing job! I was in shock at how beautiful my car was when the team finished. 
+              |I honestly don't believe it looked that great the day that I purchased the car new. I'll recommend your services to everyone I know. Top customer service skills and excellent results. Worth every penny!
+            small
+              | Someone famous in 
+              cite(title='Source Title') Source Title
       .row
         .col-lg-4
           img.img-circle(data-src='holder.js/140x140', alt='Generic placeholder image')

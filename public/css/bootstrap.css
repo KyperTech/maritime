@@ -7096,3 +7096,14 @@ td.visible-print {
     display: none !important;
   }
 }
+
+/*Added by Kyper  */
+.clean span {
+  color: #666;
+  display: block;
+  font-size: 28px;
+  font-weight: 200;
+  line-height: 35px;
+  margin-bottom: 12px;
+  font-family: 'Open Sans', sans-serif;
+}
