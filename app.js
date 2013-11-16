@@ -36,6 +36,11 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.bootstrap(db));
 app.get('/index', routes.index(db));
+app.get('/about', routes.about(db));
+app.get('/services', routes.services(db));
+app.get('/contact', routes.contact(db));
+app.get('/blog', routes.blog(db));
+
 /*
 app.get('/users', user.list);
 app.get('/helloworld', routes.helloworld);

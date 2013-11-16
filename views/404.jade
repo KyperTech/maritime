@@ -1,34 +1,38 @@
-.container
-    .row
-        .col-lg-12
-          h1.page-header
-            | 404
-            small Page Not Found
-          ol.breadcrumb
-            li
-              a(href='index.html') Home
-            li.active 404
-      .row
-        .col-lg-12
-          p.error-404 404
-          p.lead The page you're looking for could not be found.
-          p Here are some helpful links to help you find what you're looking for:
-          ul
-            li
-              a(href='#') Home
-            li
-              a(href='#') About
-            li
-              a(href='#') Services
-            li
-              a(href='#') Contact
-            li
-              a(href='#') Blog
-            li
-              a(href='#') Other 
+extends layout-1
+block content
+  body  
     .container
-      hr
-      footer
         .row
-          .col-lg-12
-            p Copyright © Company 2013
+            .col-lg-12
+              h1.page-header
+                | 404
+                small Page Not Found
+              ol.breadcrumb
+                li
+                  a(href='index.html') Home
+                li.active 404
+          .row
+            .col-lg-12
+              p.error-404 404
+              p.lead The page you're looking for could not be found.
+              p Here are some helpful links to help you find what you're looking for:
+              ul
+                li
+                  a(href='#') Home
+                li
+                  a(href='#') About
+                li
+                  a(href='#') Services
+                li
+                  a(href='#') Contact
+                li
+                  a(href='#') Blog
+                li
+                  a(href='#') Other 
+        .container
+          hr
+          footer
+            .row
+              .col-lg-12
+                p Copyright © Company 2013
+    

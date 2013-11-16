@@ -45,6 +45,50 @@ exports.index = function(db){
 	};
 };
 
+exports.about = function(db){
+	return function(req, res){
+		var collection = db.get('projects');
+		collection.find({},{},function(e,docs){
+			res.render('about', {
+				"about": docs
+			});
+		});
+	};
+};
+
+exports.services = function(db){
+	return function(req, res){
+		var collection = db.get('projects');
+		collection.find({},{},function(e,docs){
+			res.render('services', {
+				"services": docs
+			});
+		});
+	};
+};
+
+exports.contact = function(db){
+	return function(req, res){
+		var collection = db.get('projects');
+		collection.find({},{},function(e,docs){
+			res.render('contact', {
+				"contact": docs
+			});
+		});
+	};
+};
+
+exports.blog = function(db){
+	return function(req, res){
+		var collection = db.get('projects');
+		collection.find({},{},function(e,docs){
+			res.render('blog-home-1', {
+				"blog": docs
+			});
+		});
+	};
+};
+
 exports.adduser = function(db){
 	return function(req, res){
 		var userName = req.body.username;
