@@ -50,7 +50,7 @@ exports.about = function(db){
 		var collection = db.get('projects');
 		collection.find({},{},function(e,docs){
 			res.render('about', {
-				"about": docs
+				"index": docs
 			});
 		});
 	};
@@ -61,7 +61,7 @@ exports.services = function(db){
 		var collection = db.get('projects');
 		collection.find({},{},function(e,docs){
 			res.render('services', {
-				"services": docs
+				"index": docs
 			});
 		});
 	};
@@ -72,7 +72,7 @@ exports.contact = function(db){
 		var collection = db.get('projects');
 		collection.find({},{},function(e,docs){
 			res.render('contact', {
-				"contact": docs
+				"index": docs
 			});
 		});
 	};
@@ -83,7 +83,7 @@ exports.blog = function(db){
 		var collection = db.get('projects');
 		collection.find({},{},function(e,docs){
 			res.render('blog-home-1', {
-				"blog": docs
+				"index": docs
 			});
 		});
 	};
