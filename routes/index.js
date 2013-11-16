@@ -3,9 +3,6 @@
  * GET home page.
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Home' });
-};
 
 exports.helloworld = function(req, res){
   res.render('helloworld', {title: 'Hello, World!'});
@@ -32,6 +29,17 @@ exports.bootstrap = function(db){
 		collection.find({},{},function(e,docs){
 			res.render('bootstrap', {
 				"bootstrap": docs
+			});
+		});
+	};
+};
+
+exports.index = function(db){
+	return function(req, res){
+		var collection = db.get('projects');
+		collection.find({},{},function(e,docs){
+			res.render('index', {
+				"index": docs
 			});
 		});
 	};

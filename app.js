@@ -35,13 +35,14 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.bootstrap(db));
+app.get('/index', routes.index(db));
 /*
 app.get('/users', user.list);
 app.get('/helloworld', routes.helloworld);
 app.get('/userlist', routes.userlist(db));
 app.get('/newuser', routes.newuser);
 */
-app.get('/bootstrap', routes.bootstrap(db));
+//app.get('/bootstrap', routes.bootstrap(db));
 
 app.post('/adduser', routes.adduser(db));
 
