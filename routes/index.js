@@ -89,6 +89,16 @@ exports.blog = function(db){
 	};
 };
 
+/*exports.sendEmail = function(req, res){
+	server.send({
+   		text:    "i hope this works", 
+   		from:    "melvanlonden@gmail.com", 
+   		to:      "",
+   		cc:      "",
+   		subject: "testing emailjs"
+	}, function(err, message) { console.log(err || message); });
+};*/
+
 exports.adduser = function(db){
 	return function(req, res){
 		var userName = req.body.username;

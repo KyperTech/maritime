@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "webTemplate",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,6 +10,14 @@
     "jade": "*",
     "mongodb": "*",
     "monk": "*",
-    "stylus": "~0.40.*"
+    "stylus": "~0.40.*",
+    "validator": "0.4.11",
+    "sendgrid": "*"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "engines": {
+    "node": "0.8.9"
   }
 }

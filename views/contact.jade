@@ -18,21 +18,22 @@ block content
               h3 Let's Get In Touch!
               p
                 | Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              form(role='form', method='POST', action='contact-form-submission.php')
+              include messages
+              form(role='form', method='POST', action='/contact')
                 .row
                   .form-group.col-lg-4
-                    label(for='input1') Name
-                    input#input1.form-control(type='text', name='contact_name')
+                    label(for='message_name') Name
+                    input#input1.form-control(type='text', placeholder='Name', name='message[name]', value=message.name)
                   .form-group.col-lg-4
-                    label(for='input2') Email Address
-                    input#input2.form-control(type='email', name='contact_email')
+                    label(for='message_email') Email Address
+                    input#input2.form-control(type='text', placeholder='Email', name='message[email]', value=message.email)
                   .form-group.col-lg-4
                     label(for='input3') Phone Number
                     input#input3.form-control(type='phone', name='contact_phone')
                   .clearfix
                   .form-group.col-lg-12
-                    label(for='input4') Message
-                    textarea#input4.form-control(name='contact_message', rows='6')
+                    label(for='message_message') Message
+                    textarea#input4.form-control(placeholder='Enter message', rows='6', name='message[message]')=message.message
                   .form-group.col-lg-12
                     input(type='hidden', name='save', value='contact')
                     button.btn.btn-primary(type='submit') Submit
