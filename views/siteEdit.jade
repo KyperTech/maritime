@@ -1,0 +1,23 @@
+extends admintemplate
+block content
+  body
+    #page-wrapper
+      .row
+        .col-lg-12
+          h1 Site Build
+          form#formAddUser(name="adduser",method="post",action="/adduser")
+            input#inputUserName(type="text", placeholder="company name", name="company")
+            .row
+              .make-switch.switch-mini
+                input(type="checkbox" checked)
+            input#inputAbout(type="checkbox" name="aboutcheck" onchange="this.form.submit()") About
+            button#btnSubmit(type="submit") submit
+            //small A Blank Slate
+          //ol.breadcrumb
+            li
+              a(href='index.html')
+                i.icon-dashboard
+                | Dashboard
+            li.active
+              i.icon-file-alt
+              | Blank Page

@@ -44,7 +44,7 @@ exports.admin = function(db){
 	return function(req, res){
 		var collection = db.get('projects');
 		collection.find({},{},function(e,docs){
-			res.render('admintemplate', {
+			res.render('siteEdit', {
 				"index": docs
 			});
 		});

@@ -5,13 +5,14 @@ head
     meta(name='description', content='')
     meta(name='author', content='')
     title=title
-    //
-       Bootstrap core CSS 
     link(href='css/bootstrap.css', rel='stylesheet')
-    //
-       Add custom CSS here 
     link(href='css/sb-admin.css', rel='stylesheet')
     link(rel='stylesheet', href='font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='css/bootstrap-switch.css')
+    link(rel='stylesheet', href='css/flat-ui-fonts.css')
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    script(src='js/bootstrap.js')
+    script(src='js/bootstrap-switch.js')
   each com, c in index
     body
       #wrapper
@@ -108,24 +109,4 @@ head
                     a(href='#')
                       i.fa.fa-power-off
                       |  Log Out
-        #page-wrapper
-          .row
-            .col-lg-12
-              h1
-                | Administration
-              form#formAddUser(name="adduser",method="post",action="/adduser")
-                input#inputUserName(type="text", placeholder="company name", name="company")
-                input#inputUserEmail(type="text", placeholder="user email", name="useremail")
-                input#inputAbout(type="checkbox" name="aboutcheck") About
-                button#btnSubmit(type="submit") submit
-                //small A Blank Slate
-              //ol.breadcrumb
-                li
-                  a(href='index.html')
-                    i.icon-dashboard
-                    | Dashboard
-                li.active
-                  i.icon-file-alt
-                  | Blank Page
-      script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
-      script(src='js/bootstrap.js')
+        block content
