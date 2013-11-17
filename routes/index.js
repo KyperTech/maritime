@@ -95,7 +95,7 @@ exports.adduser = function(db){
 		var userEmail = req.body.useremail;
 		var aboutCheck = req.body.aboutcheck;
 		if (aboutCheck === "on"){
-			aboutCheck === true;
+			aboutCheck = true;
 		}
 
 		var collection = db.get('projects');
@@ -105,6 +105,8 @@ exports.adduser = function(db){
 		},
 			{ $set: {"company": company}}
 		);
+
+		res.redirect("");
 
 		/*collection.insert({
 			"username": userName,
