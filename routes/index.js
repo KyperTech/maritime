@@ -128,7 +128,8 @@ exports.adduser = function(db){
 		 ,  services = checkToBool(req.body.services)
 		 ,  contact = checkToBool(req.body.contact)
 		 ,  blog = checkToBool(req.body.blog)
-		 ,  portfolio = checkToBool(req.body.portfolio);
+		 ,  portfolio = checkToBool(req.body.portfolio)
+		 ,  style = req.body.style;
 
 
 		var collection = db.get('projects');
@@ -148,7 +149,8 @@ exports.adduser = function(db){
 				"navTab.services": services,
 				"navTab.contact": contact,
 				"navTab.blog": blog,
-				"navTab.portfolio": portfolio
+				"navTab.portfolio": portfolio,
+				"style": style
 			}}
 		);
 
