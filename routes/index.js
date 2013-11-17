@@ -91,15 +91,19 @@ exports.blog = function(db){
 
 exports.adduser = function(db){
 	return function(req, res){
-		var userName = req.body.username;
+		var company = req.body.company;
 		var userEmail = req.body.useremail;
+		var aboutCheck = req.body.aboutcheck;
+		if (aboutCheck === "on"){
+			aboutCheck === true;
+		}
 
 		var collection = db.get('projects');
 
 		collection.findAndModify({
 			_id: "5283fde7843852aa6c000544"
 		},
-			{ $set: {"company": userName}}
+			{ $set: {"company": company}}
 		);
 
 		/*collection.insert({
