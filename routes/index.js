@@ -105,7 +105,7 @@ exports.build = function(db){
 	};
 };
 
-exports.adduser = function(db){
+exports.edit = function(db){
 	return function(req, res){
 		var checkToBool = function(check){
 			if (check === "on"){

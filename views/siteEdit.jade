@@ -5,7 +5,7 @@ block content
       .row
         .col-lg-12
           h1 Site Build
-          form(role="form" name="adduser",method="post",action="/adduser")
+          form(role="form" name="edit", method="post", action="/edit")
             .col-lg-6
               h3 Company
               .form-group
@@ -62,11 +62,31 @@ block content
               .col-lg-3
                 h3 Style
                 .form-group
-                  select.form-control(multiple, name="style")
-                    option(value="css/bootstrap.css", selected) Default
-                    option(value="css/bootstrapflat.css") Flatly
-                    option(value="css/bootstrapslate.css") Slate
-                    option(value="css/bootstrapsimplex.css") Simplex
+                  select.form-control(name="style")
+                    if com.style=="css/bootstrap.css"
+                      option(value="css/bootstrap.css", selected) Default
+                    else 
+                      option(value="css/bootstrap.css") Default
+                    if com.style=="css/bootstrapflat.css"
+                      option(value="css/bootstrapflat.css", selected) Flatly
+                    else 
+                      option(value="css/bootstrapflat.css") Flatly
+                    if com.style=="css/bootstrapslate.css"
+                      option(value="css/bootstrapslate.css", selected) Slate
+                    else 
+                      option(value="css/bootstrapslate.css") Slate
+                    if com.style=="css/bootstrapsimplex.css"
+                      option(value="css/bootstrapsimplex.css", selected) Simplex
+                    else 
+                      option(value="css/bootstrapsimplex.css") Simplex
+                    if com.style=="css/bootstrapamelia.css"
+                      option(value="css/bootstrapamelia.css", selected) Amelia
+                    else 
+                      option(value="css/bootstrapamelia.css") Amelia
+                    if com.style=="css/bootstrapreadable.css"
+                      option(value="css/bootstrapreadable.css", selected) Readable
+                    else 
+                      option(value="css/bootstrapreadable.css") Readable
               .form-group
                 .col-sm-10
                   button.btn.btn-primary(type="submit") Submit

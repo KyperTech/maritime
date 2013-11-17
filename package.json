@@ -12,8 +12,7 @@
     "monk": "0.7.*",
     "stylus": "~0.40.*",
     "validator": "0.4.11",
-    "sendgrid": "0.4.*",
-    "less": "~1.5.1"
+    "sendgrid": "0.4.*"
   },
   "devDependencies": {
     "mocha": "1.14.*"

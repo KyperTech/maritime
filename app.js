@@ -70,7 +70,7 @@ app.get('/userlist', routes.userlist(db));
 app.get('/newuser', routes.newuser);
 //app.get('/bootstrap', routes.bootstrap(db));
 
-app.post('/adduser', routes.adduser(db));
+app.post('/edit', routes.edit(db));
 
 function csrf(req, res, next) {
   res.locals.token = req.session._csrf;
