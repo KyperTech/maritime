@@ -4,10 +4,6 @@
  */
 
 
-exports.admin = function(req, res){
-  res.render('admintemplate', {title: 'Hello, World!'});
-};
-
 exports.userlist = function(db){
 	return function(req, res){
 		var collection = db.get('usercollection');
@@ -44,7 +40,16 @@ exports.index = function(db){
 		});
 	};
 };
-
+exports.admin = function(db){
+	return function(req, res){
+		var collection = db.get('projects');
+		collection.find({},{},function(e,docs){
+			res.render('admintemplate', {
+				"index": docs
+			});
+		});
+	};
+};
 exports.about = function(db){
 	return function(req, res){
 		var collection = db.get('projects');
