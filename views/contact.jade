@@ -15,9 +15,8 @@ block content
               iframe(width='100%', height='400px', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://maps.google.com/maps?hl=en&ie=UTF8&ll=37.0625,-95.677068&spn=56.506174,79.013672&t=m&z=4&output=embed')
           .row
             .col-sm-8
-              h3 Let's Get In Touch!
-              p
-                | Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              h3 Contact
+              p=com.contact.desc
               include messages
               form(role='form', method='POST', action='/contact')
                 .row
@@ -38,26 +37,45 @@ block content
                     input(type='hidden', name='save', value='contact')
                     button.btn.btn-primary(type='submit') Submit
             .col-sm-4
-              h3 Modern Business
-              h4 A Start Bootstrap Template
-              p
-                | 5555 44th Street N.
+              h3=com.company
+              h5=com.slogan
+              p=com.contact.address
                 br
-                | Bootstrapville, CA 32323
+                | #{com.contact.city}, #{com.contact.state} #{com.contact.zip}
                 br
               p
                 i.fa.fa-phone
-                abbr(title='Phone') P
-                | : (555) 984-3600
+                | :#{com.contact.phone}
               p
                 i.fa.fa-envelope-o
-                abbr(title='Email') E
-                | :
-                a(href='mailto:feedback@startbootstrap.com') feedback@startbootstrap.com
+                abbr(title='Email')
+                | : 
+                a(href='mailto:' + com.contact.email)=com.contact.email
+
               p
                 i.fa.fa-clock-o
-                abbr(title='Hours') H
-                | : Monday - Friday: 9:00 AM to 5:00 PM
+                abbr(title='Hours')
+                | : Monday: 
+                |#{com.content.schedule.monday}
+                br
+                | Tuesday :
+                |#{com.content.schedule.tuesday}
+                br
+                | Wednesday :
+                |#{com.content.schedule.wednesday}
+                br
+                | Thursday :
+                |#{com.content.schedule.thursday}
+                br
+                |Friday: 
+                |#{com.content.schedule.friday}
+                br
+                | Saturday :
+                |#{com.content.schedule.saturday}
+                br
+                |Sunday :
+                |#{com.content.schedule.sunday}
+
               ul.list-unstyled.list-inline.list-social-icons
                 li.tooltip-social.facebook-link
                   a(href='#facebook-page', data-toggle='tooltip', data-placement='top', title='Facebook')
@@ -71,10 +89,4 @@ block content
                 li.tooltip-social.google-plus-link
                   a(href='#google-plus-page', data-toggle='tooltip', data-placement='top', title='Google+')
                     i.fa.fa-google-plus-square.fa-2x
-        .container
-          hr
-          footer
-            .row
-              .col-lg-12
-                p Copyright © Company 2013
     
