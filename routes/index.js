@@ -40,11 +40,11 @@ exports.index = function(db){
 		});
 	};
 };
-exports.admin = function(db){
+exports.dash = function(db){
 	return function(req, res){
 		var collection = db.get('projects');
 		collection.find({},{},function(e,docs){
-			res.render('siteEdit', {
+			res.render('dash', {
 				"index": docs
 			});
 		});
@@ -94,24 +94,65 @@ exports.blog = function(db){
 	};
 };
 
+exports.build = function(db){
+	return function(req, res){
+		var collection = db.get('projects');
+		collection.find({},{},function(e,docs){
+			res.render('siteEdit', {
+				"index": docs
+			});
+		});
+	};
+};
+
 exports.adduser = function(db){
 	return function(req, res){
-		var company = req.body.company;
-		var userEmail = req.body.useremail;
-		var aboutCheck = req.body.aboutcheck;
-		if (aboutCheck === "on"){
-			aboutCheck = true;
-		}
+		var checkToBool = function(check){
+			if (check === "on"){
+				check = true;
+			}
+			else{
+				check = false;
+			}
+			return check;
+		};
+
+		var company = req.body.company
+		 ,  email = req.body.email
+		 ,  street = req.body.address
+		 ,  city = req.body.city
+		 ,  state = req.body.state
+		 ,  zip = req.body.zip
+		 ,  phone = req.body.phone
+		 ,  about = checkToBool(req.body.about)
+		 ,  services = checkToBool(req.body.services)
+		 ,  contact = checkToBool(req.body.contact)
+		 ,  blog = checkToBool(req.body.blog)
+		 ,  portfolio = checkToBool(req.body.portfolio);
+
 
 		var collection = db.get('projects');
 
 		collection.findAndModify({
 			_id: "5283fde7843852aa6c000544"
 		},
-			{ $set: {"company": company}}
+			{ $set: {
+				"company": company,
+				"contact.address": street,
+				"contact.city": city,
+				"contact.state": state,
+				"contact.zip": zip,
+				"contact.phone": phone,
+				"contact.email": email,
+				"navTab.about": about,
+				"navTab.services": services,
+				"navTab.contact": contact,
+				"navTab.blog": blog,
+				"navTab.portfolio": portfolio
+			}}
 		);
 
-		res.redirect("/admin");
+		res.redirect("/build");
 
 		/*collection.insert({
 			"username": userName,

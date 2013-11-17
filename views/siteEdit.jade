@@ -5,19 +5,60 @@ block content
       .row
         .col-lg-12
           h1 Site Build
-          form#formAddUser(name="adduser",method="post",action="/adduser")
-            input#inputUserName(type="text", placeholder="company name", name="company")
-            .row
-              .make-switch.switch-mini
-                input(type="checkbox" checked)
-            input#inputAbout(type="checkbox" name="aboutcheck" onchange="this.form.submit()") About
-            button#btnSubmit(type="submit") submit
-            //small A Blank Slate
-          //ol.breadcrumb
-            li
-              a(href='index.html')
-                i.icon-dashboard
-                | Dashboard
-            li.active
-              i.icon-file-alt
-              | Blank Page
+          form(role="form" name="adduser",method="post",action="/adduser")
+            .col-lg-6
+              h3 Company
+              .form-group
+                input.form-control(type="text", placeholder="Shoomba Inc" value=com.company, name="company")
+              h3 Address
+              .form-group
+                label(for="address") Street
+                  input.form-control(type="text", placeholder="555 Cedar Rd", value=com.contact.address, name="address")
+                label(for="city") City
+                  input.form-control(type="text", placeholder="Cityville", value=com.contact.city, name="city")
+                label(for="state") State
+                  input.form-control(type="text", placeholder="MD", value=com.contact.state, name="state")
+                label(for="zip") Zip
+                  input.form-control(type="text", placeholder="55555", value=com.contact.zip, name="zip")
+              h3 Contact
+              .form-group
+                label(for="email") Email
+                  input.form-control(type="email", placeholder="email", value=com.contact.email, name="email")
+                label(for="phone") Phone
+                  input.form-control(type="tel", placeholder="phone", value=com.contact.phone, name="phone")
+            .col-lg-6  
+              h3 Pages
+              .form-group
+                label(for="about") About
+                  .make-switch.switch-mini
+                    if com.navTab.about
+                      input.form-group(type="checkbox", checked, name="about")
+                    else
+                      input.form-group(type="checkbox", name="about")
+                label(for="services") Services
+                  .make-switch.switch-mini
+                    if com.navTab.services
+                      input.form-group(type="checkbox", checked, name="services")
+                    else
+                      input.form-group(type="checkbox", name="services")
+                label(for="contact") Contact
+                  .make-switch.switch-mini
+                    if com.navTab.contact
+                      input.form-group(type="checkbox", checked, name="contact")
+                    else
+                      input.form-group(type="checkbox", name="contact")
+                label(for="blog") Blog
+                  .make-switch.switch-mini
+                    if com.navTab.blog
+                      input.form-group(type="checkbox", checked, name="blog")
+                    else
+                      input.form-group(type="checkbox", name="blog")
+                label(for="portfolio") Portfolio
+                  .make-switch.switch-mini
+                    if com.navTab.portfolio
+                      input.form-group(type="checkbox", checked, name="portfolio")
+                    else
+                      input.form-group(type="checkbox", name="portfolio")
+              .form-group
+                .col-sm-10
+                  button.btn.btn-default(type="submit") Submit

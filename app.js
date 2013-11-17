@@ -60,7 +60,8 @@ app.get('/about', routes.about(db));
 app.get('/services', routes.services(db));
 app.get('/contact', routes.contact(db));
 app.get('/blog', routes.blog(db));
-app.get('/admin', routes.admin(db));
+app.get('/admin', routes.dash(db));
+app.get('/build', routes.build(db));
 /*
 app.get('/users', user.list);
 app.get('/helloworld', routes.helloworld);
