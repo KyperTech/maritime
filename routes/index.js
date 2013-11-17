@@ -4,8 +4,8 @@
  */
 
 
-exports.helloworld = function(req, res){
-  res.render('helloworld', {title: 'Hello, World!'});
+exports.admin = function(req, res){
+  res.render('admintemplate', {title: 'Hello, World!'});
 };
 
 exports.userlist = function(db){
