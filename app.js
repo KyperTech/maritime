@@ -60,6 +60,15 @@ app.get('/about', routes.about(db));
 app.get('/services', routes.services(db));
 app.get('/contact', routes.contact(db));
 app.get('/blog', routes.blog(db));
+/*
+app.get('/users', user.list);
+app.get('/helloworld', routes.helloworld);
+app.get('/userlist', routes.userlist(db));
+*/
+app.get('/newuser', routes.newuser);
+//app.get('/bootstrap', routes.bootstrap(db));
+
+app.post('/adduser', routes.adduser(db));
 
 
 function csrf(req, res, next) {
@@ -123,17 +132,6 @@ app.post('/contact', csrf, function(req, res) {
     render();
   }
 });
-
-
-/*
-app.get('/users', user.list);
-app.get('/helloworld', routes.helloworld);
-app.get('/userlist', routes.userlist(db));
-app.get('/newuser', routes.newuser);
-*/
-//app.get('/bootstrap', routes.bootstrap(db));
-
-//app.post('/adduser', routes.adduser(db));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

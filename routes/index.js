@@ -89,22 +89,12 @@ exports.blog = function(db){
 	};
 };
 
-/*exports.sendEmail = function(req, res){
-	server.send({
-   		text:    "i hope this works", 
-   		from:    "melvanlonden@gmail.com", 
-   		to:      "",
-   		cc:      "",
-   		subject: "testing emailjs"
-	}, function(err, message) { console.log(err || message); });
-};*/
-
 exports.adduser = function(db){
 	return function(req, res){
 		var userName = req.body.username;
 		var userEmail = req.body.useremail;
 
-		var collection = db.get('usercollection');
+		var collection = db.get('projects');
 
 		collection.insert({
 			"username": userName,
@@ -114,8 +104,8 @@ exports.adduser = function(db){
 				res.send("There was a problem adding the information to the database")
 			}
 			else {
-				res.redirect("userlist");
-				res.location("userlist");
+				res.redirect("services");
+				res.location("services");
 			}
 		});
 	}

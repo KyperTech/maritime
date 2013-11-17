@@ -10,7 +10,6 @@ html
     script(src='/js/bootstrap.min.js')
     script(src='/js/holder.js')
   body
-  each com, c in bootstrap
     .navbar-wrapper
         .container
           .navbar.navbar-inverse.navbar-fixed-top(role='navigation')
@@ -21,35 +20,15 @@ html
                   span.icon-bar
                   span.icon-bar
                   span.icon-bar
-                title=com.company
-                a.navbar-brand(href='#')= com.company
+                title big bear
+                a.navbar-brand(href='#')= asdf
               .navbar-collapse.collapse
                 ul.nav.navbar-nav
-                  if com.navTab.home
-                    li.active
-                      a(href='#') Home
-                  if com.navTab.about
-                    li
-                      a(href='#about') About
-                  if com.navTab.contact
-                    li
-                      a(href='./index') Contact
-                  if com.navTab.dropdown
-                    li.dropdown
-                      a.dropdown-toggle(href='#', data-toggle='dropdown')
-                        | Dropdown
-                        b.caret
-                      ul.dropdown-menu
-                        li
-                          a(href='#') Action
-                        li
-                          a(href='#') Another action
-                        li
-                          a(href='#') Something else here
-                        li.divider
-                        li.dropdown-header Nav header
-                        li
-                          a(href='#') Separated link
-                        li
-                          a(href='#') One more separated link
+                  li.active
+                    a(href='#') Home
+                  li
+                    a(href='#about') About
+                  li
+                    a(href='./index') Contact
+                  li.dropdown
       block content
