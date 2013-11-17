@@ -96,7 +96,13 @@ exports.adduser = function(db){
 
 		var collection = db.get('projects');
 
-		collection.insert({
+		collection.findAndModify({
+			_id: "5283fde7843852aa6c000544"
+		},
+			{ $set: {"company": userName}}
+		);
+
+		/*collection.insert({
 			"username": userName,
 			"email" : userEmail
 		}, function (err, doc){
@@ -107,6 +113,6 @@ exports.adduser = function(db){
 				res.redirect("services");
 				res.location("services");
 			}
-		});
+		});*/
 	}
 }
