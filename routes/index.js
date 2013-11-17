@@ -111,7 +111,7 @@ exports.adduser = function(db){
 			{ $set: {"company": company}}
 		);
 
-		res.redirect("");
+		res.redirect("/admin");
 
 		/*collection.insert({
 			"username": userName,
