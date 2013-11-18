@@ -12,7 +12,8 @@
     "monk": "0.7.*",
     "stylus": "~0.40.*",
     "validator": "0.4.11",
-    "sendgrid": "0.4.*"
+    "sendgrid": "0.4.*",
+    "passport": "~0.1.17"
   },
   "devDependencies": {
     "mocha": "1.14.*"

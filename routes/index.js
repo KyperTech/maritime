@@ -105,6 +105,40 @@ exports.build = function(db){
 	};
 };
 
+exports.login = function(db){
+	return function(req, res){
+		var user = req.body.user
+		 ,  password = req.body.password;
+		 
+
+
+		var collection = db.get('user');
+
+		collection.findById({
+			_id: "528995605d7780a5d50002cd"
+		},
+			function(err, doc){
+				
+			}
+		);
+
+		res.redirect("/admin");
+
+		/*collection.insert({
+			"username": userName,
+			"email" : userEmail
+		}, function (err, doc){
+			if (err) {
+				res.send("There was a problem adding the information to the database")
+			}
+			else {
+				res.redirect("services");
+				res.location("services");
+			}
+		});*/
+	}
+}
+
 exports.edit = function(db){
 	return function(req, res){
 		var checkToBool = function(check){
