@@ -109,7 +109,7 @@ html(lang='en')
             .col-md-4.col-md-offset-4.text-center
               h2 My Portfolio
               hr
-              //Later on I plan to do an each statement for each service/portfolio item, but for now there most likley won't be that man
+              //Later on I plan to do an each statement for each service/portfolio item, but for now they most likley won't be that man
           .row  
             .col-md-2.col-md-offset-2.text-center
               .service-item
@@ -236,17 +236,17 @@ html(lang='en')
     script(src='js/jquery.js')
     script(src='js/bootstrap.js')
     // Custom JavaScript for the Side Menu and Smooth Scrolling - Put in a custom JavaScript file to clean this up
-    script
+    script.
       $("#menu-close").click(function(e) {
       e.preventDefault();
       $("#sidebar-wrapper").toggleClass("active");
       });
-    script
+    script.
       $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#sidebar-wrapper").toggleClass("active");
       });
-    script
+    script.
       $(function() {
       $('a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\\//,'') == this.pathname.replace(/^\//,'')
