@@ -23,13 +23,13 @@ html(lang='en')
           a(href='http://startbootstrap.com')=com.company
         if com.navTab.about
           li
-            a(href='/about') About
+            a(href='#about') About
         if com.navTab.services
           li
-            a(href='/services') Services
+            a(href='#services') Services
         if com.navTab.contact
           li
-            a(href='/contact') Contact
+            a(href='#contact') Contact
         if com.navTab.portfolio
           li.dropdown
             a.dropdown-toggle(href='#', data-toggle='dropdown')
@@ -37,15 +37,8 @@ html(lang='en')
               b.caret
             ul.dropdown-menu
               li
-                a(href='portfolio-1-col.html') 1 Column Portfolio
-              li
-                a(href='portfolio-2-col.html') 2 Column Portfolio
-              li
-                a(href='portfolio-3-col.html') 3 Column Portfolio
-              li
-                a(href='portfolio-4-col.html') 4 Column Portfolio
-              li
-                a(href='portfolio-item.html') Single Portfolio Item
+                a(href='#services') Overview
+              //Specific Projects can be added with each function
         if com.navTab.blog
           li.dropdown
             a.dropdown-toggle(href='#', data-toggle='dropdown')
@@ -53,11 +46,8 @@ html(lang='en')
               b.caret
             ul.dropdown-menu
               li
-                a(href='/blog-home-1') Blog Home 1
-              li
-                a(href='blog-home-2.html') Blog Home 2
-              li
-                a(href='blog-post.html') Blog Post
+                a(href='/blog') Blog Home 1
+                //Page doesn't currenlty exist
         if com.navTab.other
           li.dropdown
             a.dropdown-toggle(href='#', data-toggle='dropdown')
@@ -65,15 +55,7 @@ html(lang='en')
               b.caret
             ul.dropdown-menu
               li
-                a(href='full-width.html') Full Width Page
-              li
-                a(href='sidebar.html') Sidebar Page
-              li
-                a(href='faq.html') FAQ
-              li.active
-                a(href='404.html') 404
-              li
-                a(href='pricing.html') Pricing Table
+                a(href='#top') Other Toggle
     // /Side Menu
     // Full Page Image Header Area
     #top.header
@@ -192,9 +174,33 @@ html(lang='en')
       .container
         .row
           .col-md-6.col-md-offset-3.text-center
-            h3 The buttons below are impossible to resist.
-            a.btn.btn-lg.btn-default(href='#') Click Me!
-            a.btn.btn-lg.btn-primary(href='#') Look at Me!
+            if com.scheduleOn
+              h3 Schedule
+              h4
+                | Monday:
+                |#{com.schedule.monday}
+                br
+                | Tuesday :
+                |#{com.schedule.tuesday}
+                br
+                | Wednesday :
+                |#{com.schedule.wednesday}
+                br
+                | Thursday :
+                |#{com.schedule.thursday}
+                br
+                |Friday: 
+                |#{com.schedule.friday}
+                br
+                | Saturday :
+                |#{com.schedule.saturday}
+                br
+                |Sunday :
+                |#{com.schedule.sunday}
+            else
+              h4 The schedule would be here, but you don't want to display it.
+            //a.btn.btn-lg.btn-default(href='#') Click Me!
+            //a.btn.btn-lg.btn-primary(href='#') Look at Me!
     // /Call to Action
     // Map
     #contact.map
@@ -211,6 +217,7 @@ html(lang='en')
             ul.list-inline
               li
                 i.fa.fa-facebook.fa-3x
+                //(src=com.fbUrl) How to make the icons actually link to somewhere?
               li
                 i.fa.fa-twitter.fa-3x
               li
@@ -219,7 +226,9 @@ html(lang='en')
               a(href='#top')
                 i.fa.fa-circle-arrow-up.scroll.fa-4x
             hr
-            p Copyright © Company 2013
+            p Copyright © 
+              a(href='mailto:' + com.contact.email)=com.company
+              |  2013
     // /Footer
     // Bootstrap core JavaScript
     // Placed at the end of the document so the pages load faster
