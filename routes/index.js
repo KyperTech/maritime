@@ -33,13 +33,30 @@ exports.bootstrap = function(db){
 exports.index = function(db){
 	return function(req, res){
 		var collection = db.get('projects');
-		collection.find({},{},function(e,docs){
-			res.render('index', {
-				"index": docs
+		collection.findOne({company: 'New Company'}).on('success', function(doc){
+			//console.log("you found it");
+			/* This is an if statement to pick the layout (one page or others)
+			Console shows that variable is "undefined" when set like:
+			var layout = req.body.layout
+			if (layout === "OnePage"){
+				res.render('personal', {
+				"com": doc
+				});
+			}
+			else{
+				res.render('test', {
+				"com": doc
+			})
+			}
+			console.log(layout);*/
+
+			res.render('personal', {
+				"com": doc
 			});
-		});
+		}); 
 	};
 };
+
 exports.dash = function(db){
 	return function(req, res){
 		var collection = db.get('projects');

@@ -1,9 +1,0 @@
-extends layout
-
-block content
-	h1= title
-	form#formAddUser(name="adduser",method="post",action="/adduser")
-		input#inputUserName(type="text", placeholder="company name", name="company")
-		input#inputUserEmail(type="text", placeholder="user email", name="useremail")
-		input#inputAbout(type="checkbox" name="aboutcheck") About
-		button#btnSubmit(type="submit") submit

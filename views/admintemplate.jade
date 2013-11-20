@@ -13,104 +13,103 @@ head
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     script(src='js/bootstrap.js')
     script(src='js/bootstrap-switch.js')
-  each com, c in index
-    body
-      #wrapper
-        nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation') 
-          .navbar-header
-            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
-              span.sr-only Toggle navigation
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-            a.navbar-brand= com.company
-          .collapse.navbar-collapse.navbar-ex1-collapse
-            ul.nav.navbar-nav.side-nav
-              li
-                a(href='/admin')
-                  i.fa.fa-dashboard
-                  |  Dashboard
-              li
-                a(href='/build')
-                  i.fa.fa-edit
-                  |  Edit Site
-            ul.nav.navbar-nav.navbar-right.navbar-user
-              li.dropdown.messages-dropdown
-                a.dropdown-toggle(href='#', data-toggle='dropdown')
-                  i.fa.fa-envelope
-                  |  Messages 
-                  span.badge 7
-                  b.caret
-                ul.dropdown-menu
-                  li.dropdown-header 7 New Messages
-                  li.message-preview
-                    a(href='#')
-                      span.avatar
-                        img(src='http://placehold.it/50x50')
-                      span.name John Smith:
-                      span.message Hey there, I wanted to ask you something...
-                      span.time
-                        i.fa.fa-clock-o
-                        | 4:34 PM
-                  li.divider
-                  li.message-preview
-                    a(href='#')
-                      span.avatar
-                        img(src='http://placehold.it/50x50')
-                      span.name John Smith:
-                      span.message Hey there, I wanted to ask you something...
-                      span.time
-                        i.fa.fa-clock-o
-                        | 4:34 PM
-                  li.divider
-                  li.message-preview
-                    a(href='#')
-                      span.avatar
-                        img(src='http://placehold.it/50x50')
-                      span.name John Smith:
-                      span.message Hey there, I wanted to ask you something...
-                      span.time
-                        i.fa.fa-clock-o
-                        | 4:34 PM
-                  li.divider
-                  li
-                    a(href='#')
-                      | View Inbox
-                      span.badge 7
-              li.dropdown.alerts-dropdown
-                a.dropdown-toggle(href='#', data-toggle='dropdown')
-                  i.fa.fa-bell
-                  |  Alerts 
-                  span.badge 3
-                  b.caret
-                ul.dropdown-menu
-                  li
-                    a(href='#')
-                      | Default 
-                      span.label.label-default Default
-              li.dropdown.user-dropdown
-                a.dropdown-toggle(href='#', data-toggle='dropdown')
-                  i.fa.fa-user
-                  | 
-                  |#{com.company}
-                  b.caret
-                ul.dropdown-menu
-                  li
-                    a(href='#')
-                      i.fa.fa-user
-                      |  Profile
-                  li
-                    a(href='#')
-                      i.fa.fa-envelope
-                      |  Inbox
-                      span.badge 7
-                  li
-                    a(href='#')
-                      i.fa.fa-gear
-                      |  Settings
-                  li.divider
-                  li
-                    a(href='#')
-                      i.fa.fa-power-off
-                      |  Log Out
-        block content
+  body
+    #wrapper
+      nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation') 
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand= com.company
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.nav.navbar-nav.side-nav
+            li
+              a(href='/admin')
+                i.fa.fa-dashboard
+                |  Dashboard
+            li
+              a(href='/build')
+                i.fa.fa-edit
+                |  Edit Site
+          ul.nav.navbar-nav.navbar-right.navbar-user
+            li.dropdown.messages-dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                i.fa.fa-envelope
+                |  Messages 
+                span.badge 7
+                b.caret
+              ul.dropdown-menu
+                li.dropdown-header 7 New Messages
+                li.message-preview
+                  a(href='#')
+                    span.avatar
+                      img(src='http://placehold.it/50x50')
+                    span.name John Smith:
+                    span.message Hey there, I wanted to ask you something...
+                    span.time
+                      i.fa.fa-clock-o
+                      | 4:34 PM
+                li.divider
+                li.message-preview
+                  a(href='#')
+                    span.avatar
+                      img(src='http://placehold.it/50x50')
+                    span.name John Smith:
+                    span.message Hey there, I wanted to ask you something...
+                    span.time
+                      i.fa.fa-clock-o
+                      | 4:34 PM
+                li.divider
+                li.message-preview
+                  a(href='#')
+                    span.avatar
+                      img(src='http://placehold.it/50x50')
+                    span.name John Smith:
+                    span.message Hey there, I wanted to ask you something...
+                    span.time
+                      i.fa.fa-clock-o
+                      | 4:34 PM
+                li.divider
+                li
+                  a(href='#')
+                    | View Inbox
+                    span.badge 7
+            li.dropdown.alerts-dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                i.fa.fa-bell
+                |  Alerts 
+                span.badge 3
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#')
+                    | Default 
+                    span.label.label-default Default
+            li.dropdown.user-dropdown
+              a.dropdown-toggle(href='#', data-toggle='dropdown')
+                i.fa.fa-user
+                | 
+                |#{com.company}
+                b.caret
+              ul.dropdown-menu
+                li
+                  a(href='#')
+                    i.fa.fa-user
+                    |  Profile
+                li
+                  a(href='#')
+                    i.fa.fa-envelope
+                    |  Inbox
+                    span.badge 7
+                li
+                  a(href='#')
+                    i.fa.fa-gear
+                    |  Settings
+                li.divider
+                li
+                  a(href='#')
+                    i.fa.fa-power-off
+                    |  Log Out
+      block content

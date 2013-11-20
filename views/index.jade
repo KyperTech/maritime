@@ -4,23 +4,19 @@ block content
     if com.carouselOn 
       #myCarousel.carousel.slide
             ol.carousel-indicators
-              each slide, s in com.carousel
-                if slide.active
-                  li.active(data-target='#myCarousel', data-slide-to=slide.number)
-                else
-                  li(data-target='#myCarousel', data-slide-to=slide.number)
+              if carousel.active
+                li.active(data-target='#myCarousel', data-slide-to=slide.number)
+              else
+                li(data-target='#myCarousel', data-slide-to=slide.number)
             .carousel-inner
-              each slide, s in com.carousel
-                if slide.active
-                  .item.active
-                    .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
-                    .carousel-caption
-                      h1=slide.headline
-                else
-                  .item
-                    .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
-                    .carousel-caption
-                      h1=slide.headline
+              if carousel.active
+                .item.active
+                  .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
+                  .carousel-caption
+              else
+                .item
+                  .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
+                  .carousel-caption
             a.left.carousel-control(href='#myCarousel', data-slide='prev')
               span.icon-prev
             a.right.carousel-control(href='#myCarousel', data-slide='next')
