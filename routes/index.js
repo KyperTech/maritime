@@ -33,26 +33,26 @@ exports.bootstrap = function(db){
 exports.index = function(db){
 	return function(req, res){
 		var collection = db.get('projects');
-		collection.findOne({company: 'New Company'}).on('success', function(doc){
+		collection.findOne({_id:"5283fde7843852aa6c000544"}).on('success', function(doc){
 			//console.log("you found it");
 			/* This is an if statement to pick the layout (one page or others)
-			Console shows that variable is "undefined" when set like:
-			var layout = req.body.layout
+			Console shows that variable is "undefined" when set like:*/
+			var layout = doc.layout
 			if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc
 				});
 			}
 			else{
-				res.render('test', {
+				res.render('index', {
 				"com": doc
 			})
 			}
-			console.log(layout);*/
-
+			
+/*
 			res.render('personal', {
 				"com": doc
-			});
+			});*/
 		}); 
 	};
 };
@@ -202,6 +202,7 @@ exports.edit = function(db){
 				"navTab.blog": blog,
 				"navTab.portfolio": portfolio,
 				"style": style
+
 			}}
 		);
 

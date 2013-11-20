@@ -3,24 +3,25 @@ block content
   body
     if com.carouselOn 
       #myCarousel.carousel.slide
-            ol.carousel-indicators
-              if carousel.active
-                li.active(data-target='#myCarousel', data-slide-to=slide.number)
-              else
-                li(data-target='#myCarousel', data-slide-to=slide.number)
-            .carousel-inner
-              if carousel.active
-                .item.active
-                  .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
-                  .carousel-caption
-              else
-                .item
-                  .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
-                  .carousel-caption
-            a.left.carousel-control(href='#myCarousel', data-slide='prev')
-              span.icon-prev
-            a.right.carousel-control(href='#myCarousel', data-slide='next')
-              span.icon-next
+        each slide, s in com.carousel
+          ol.carousel-indicators
+            if com.carousel.active
+              li.active(data-target='#myCarousel', data-slide-to=slide.number)
+            else
+              li(data-target='#myCarousel', data-slide-to=slide.number)
+          .carousel-inner
+            if com.carousel.active
+              .item.active
+                .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
+                .carousel-caption
+            else
+              .item
+                .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
+                .carousel-caption
+          a.left.carousel-control(href='#myCarousel', data-slide='prev')
+            span.icon-prev
+          a.right.carousel-control(href='#myCarousel', data-slide='next')
+            span.icon-next
     .section
       .container
         .row
