@@ -5,7 +5,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='')
     meta(name='author', content='')
-    title Stylish Portfolio Template for Bootstrap
+    title=com.company + "|" + title
     // Bootstrap core CSS
     link(href='css/bootstrap.css', rel='stylesheet')
     // Add custom CSS here
@@ -20,7 +20,7 @@ html(lang='en')
         a#menu-close.btn.btn-default.btn-lg.pull-right.toggle(href='#')
           i.fa.fa-times
         li.sidebar-brand
-          a(href='http://startbootstrap.com') Start Bootstrap
+          a(href='http://startbootstrap.com')=com.company
         li
           a(href='#top') Home
         li
@@ -35,12 +35,8 @@ html(lang='en')
     // Full Page Image Header Area
     #top.header
       .vert-text
-        h1 Start Bootstrap
-        h3
-          em We
-          | Build Great Templates,
-          em You
-          | Make Them Better
+        h1=com.company
+        h3=com.slogan
         a.btn.btn-default.btn-lg(href='#about') Find Out More
     // /Full Page Image Header Area
     // Intro
@@ -48,45 +44,70 @@ html(lang='en')
       .container
         .row
           .col-md-6.col-md-offset-3.text-center
-            h2 Subtle Sidebar is the Perfect Template for your Next Portfolio Website Project!
-            p.lead
-              | This template really has it all. It's up to you to customize it to your liking! It features some fresh photography courtesy of
-              a(target='_blank', href='http://join.deathtothestockphoto.com/') Death to the Stock Photo
-              | .
+            h2=com.mainFooterTitle
+            p.lead=com.mainFooterDesc
     // /Intro
     // Services
     #services.services
       .container
-        .row
-          .col-md-4.col-md-offset-4.text-center
-            h2 Our Services
-            hr
-        .row
-          .col-md-2.col-md-offset-2.text-center
-            .service-item
-              i.service-icon.fa.fa-rocket
-              h4 Spacecraft Repair
-              p
-                | Did your navigation system shut down in the middle of that asteroid field? We can repair any dings and scrapes to your spacecraft!
-          .col-md-2.text-center
-            .service-item
-              i.service-icon.fa.fa-magnet
-              h4 Problem Solving
-              p
-                | Need to know how magnets work? Our problem solving solutions team can help you identify problems and conduct exploratory research.
-          .col-md-2.text-center
-            .service-item
-              i.service-icon.fa.fa-shield
-              h4 Blacksmithing
-              p
-                | Planning a time travel trip to the middle ages? Preserve the space time continuum by blending in with period accurate armor and weapons.
-          .col-md-2.text-center
-            .service-item
-              i.service-icon.fa.fa-pencil
-              h4 Pencil Sharpening
-              p
-                | We've been voted the best pencil sharpening service for 10 consecutive years. If you have a pencil that feels dull, we'll get it sharp!
-    // /Services
+        if com.navTab.services
+          .row
+            .col-md-4.col-md-offset-4.text-center
+              h2 Our Services
+              hr
+              //Later on I plan to do an each statement for each service/portfolio item, but for now there most likley won't be that man
+          .row  
+            .col-md-2.col-md-offset-2.text-center
+              .service-item
+                i.service-icon.fa.fa-rocket
+                //i=com.services.service1.picturelink  Figure out the correct way to do this
+                h4=com.services.service1.title
+                p=com.services.service1.desc
+            .col-md-2.text-center
+              .service-item
+                i.service-icon.fa.fa-magnet
+                h4=com.services.service2.title
+                p=com.services.service2.desc
+            .col-md-2.text-center
+              .service-item
+                i.service-icon.fa.fa-shield
+                h4=com.services.service3.title
+                p=com.services.service3.desc
+            .col-md-2.text-center
+              .service-item
+                i.service-icon.fa.fa-pencil
+                h4=com.services.service4.title
+                p=com.services.service4.desc
+        else
+          .row
+            .col-md-4.col-md-offset-4.text-center
+              h2 My Portfolio
+              hr
+              //Later on I plan to do an each statement for each service/portfolio item, but for now there most likley won't be that man
+          .row  
+            .col-md-2.col-md-offset-2.text-center
+              .service-item
+                i.service-icon.fa.fa-rocket
+                //i=com.services.service1.picturelink  Figure out the correct way to do this
+                h4=com.portfolio.project1.title
+                p=com.portfolio.project1.desc
+            .col-md-2.text-center
+              .service-item
+                i.service-icon.fa.fa-magnet
+                h4=com.portfolio.project2.title
+                p=com.portfolio.project2.desc
+            .col-md-2.text-center
+              .service-item
+                i.service-icon.fa.fa-shield
+                h4=com.portfolio.project3.title
+                p=com.portfolio.project3.desc
+            .col-md-2.text-center
+              .service-item
+                i.service-icon.fa.fa-pencil
+                h4=com.portfolio.project4.title
+                p=com.portfolio.project4.desc
+           
+    // /Portfolio
     // Callout
     .callout
       .vert-text
