@@ -35,8 +35,7 @@ exports.index = function(db){
 		var collection = db.get('projects');
 		collection.findOne({_id:"5283fde7843852aa6c000544"}).on('success', function(doc){
 			//console.log("you found it");
-			/* This is an if statement to pick the layout (one page or others)
-			Console shows that variable is "undefined" when set like:*/
+			/* This is an if statement to pick the page layout (one page or others)*/
 			var layout = doc.layout
 			if (layout === "OnePage"){
 				res.render('personal', {

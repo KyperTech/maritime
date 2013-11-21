@@ -3,86 +3,104 @@ block content
   body
     if com.carouselOn 
       #myCarousel.carousel.slide
-        each slide, s in com.carousel
-          ol.carousel-indicators
-            if com.carousel.active
-              li.active(data-target='#myCarousel', data-slide-to=slide.number)
-            else
-              li(data-target='#myCarousel', data-slide-to=slide.number)
-          .carousel-inner
-            if com.carousel.active
-              .item.active
-                .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
-                .carousel-caption
-            else
-              .item
-                .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
-                .carousel-caption
-          a.left.carousel-control(href='#myCarousel', data-slide='prev')
-            span.icon-prev
-          a.right.carousel-control(href='#myCarousel', data-slide='next')
-            span.icon-next
+            ol.carousel-indicators
+              each slide, s in com.carousel
+                if slide.active
+                  li.active(data-target='#myCarousel', data-slide-to=slide.number)
+                else
+                  li(data-target='#myCarousel', data-slide-to=slide.number)
+            .carousel-inner
+              each slide, s in com.carousel
+                if slide.active
+                  .item.active
+                    .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
+                    .carousel-caption
+                      h1=slide.headline
+                else
+                  .item
+                    .fill(style='background-image: url(\'http://placehold.it/1900x1080&text=Slide Three\');')
+                    .carousel-caption
+                      h1=slide.headline
+            a.left.carousel-control(href='#myCarousel', data-slide='prev')
+              span.icon-prev
+            a.right.carousel-control(href='#myCarousel', data-slide='next')
+              span.icon-next
     .section
       .container
         .row
           .col-lg-4.col-md-4
             h3
               i.fa.fa-check-circle
-              | Bootstrap 3 Built
+              |  #{com.services.service1.title}
             p
-              | The 'Modern Business' website template by
-              a(href='http://startbootstrap.com') Start Bootstrap
-              | is built with
-              a(href='http://getbootstrap.com') Bootstrap 3
-              | . Make sure you're up to date with latest Bootstrap documentation!
+              | #{com.services.service1.desc}
           .col-lg-4.col-md-4
             h3
               i.fa.fa-pencil
-              | Ready to Style & Edit
+              |  #{com.services.service2.title}
             p
-              | You're ready to go with this pre-built page structure, now all you need to do is add your own custom stylings! You can see some free themes over at
-              a(href='http://bootswatch.com') Bootswatch
-              | , or come up with your own using
-              a(href='http://getbootstrap.com/customize/') the Bootstrap customizer
-              | !
+              | #{com.services.service2.desc}
           .col-lg-4.col-md-4
             h3
               i.fa.fa-folder-open
-              | Many Page Options
+              |  #{com.services.service3.title}
             p
-              | This template features many common pages that you might see on a business website. Pages include: about, contact, portfolio variations, blog, pricing, FAQ, 404, services, and general multi-purpose pages.
+              | #{com.services.service3.desc}
     .section-colored.text-center
       .container
         .row
           .col-lg-12
-            h2 Modern Business: A Clean & Simple Full Website Template by Start Bootstrap
-            p
-              | A complete website design featuring various single page templates from Start Bootstraps library of free HTML starter templates.
+            h2=com.slogan
+            p=com.slogandesc
             hr
     .section
       .container
         .row
-          .col-lg-12.text-center
-            h2 Display Some Work on the Home Page Portfolio
-            hr
-          .col-lg-4.col-md-4.col-sm-6
-            a(href='portfolio-item.html')
-              img.img-responsive.img-home-portfolio(src='http://placehold.it/700x450')
-          .col-lg-4.col-md-4.col-sm-6
-            a(href='portfolio-item.html')
-              img.img-responsive.img-home-portfolio(src='http://placehold.it/700x450')
-          .col-lg-4.col-md-4.col-sm-6
-            a(href='portfolio-item.html')
-              img.img-responsive.img-home-portfolio(src='http://placehold.it/700x450')
-          .col-lg-4.col-md-4.col-sm-6
-            a(href='portfolio-item.html')
-              img.img-responsive.img-home-portfolio(src='http://placehold.it/700x450')
-          .col-lg-4.col-md-4.col-sm-6
-            a(href='portfolio-item.html')
-              img.img-responsive.img-home-portfolio(src='http://placehold.it/700x450')
-          .col-lg-4.col-md-4.col-sm-6
-            a(href='portfolio-item.html')
-              img.img-responsive.img-home-portfolio(src='http://placehold.it/700x450')
+          if com.navTab.portfolio.active
+            .col-lg-12.text-center
+              h2 Portfolio
+              hr
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.portfolio.project1.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.portfolio.project1.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.portfolio.project2.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.portfolio.project2.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.portfolio.project3.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.portfolio.project3.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.portfolio.project4.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.portfolio.project4.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.portfolio.project5.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.portfolio.project5.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.portfolio.project6.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.portfolio.project6.pic)
+          else
+            .col-lg-12.text-center
+              h2 Gallery
+              hr
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.gallery.pic1.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.gallery.pic1.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.gallery.pic2.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.gallery.pic2.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.gallery.pic3.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.gallery.pic3.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.gallery.pic4.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.gallery.pic4.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.gallery.pic5.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.gallery.pic5.pic)
+            .col-lg-4.col-md-4.col-sm-6
+              a(href='images/'+ com.gallery.pic6.pic)
+                img.img-responsive.img-home-portfolio(src='images/'+ com.gallery.pic6.pic)
+            a.btn.btn-lg.btn-primary.pull-right(href='/gallery') View Gallery
     .section-colored
       .container
         .row
