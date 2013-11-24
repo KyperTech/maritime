@@ -69,20 +69,58 @@ exports.index = function(db){
 exports.dash = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.find({},{},function(e,docs){
-			res.render('dash', {
-				"index": docs
-			});
+		collection.findOne({_id:"529143b241cc74673f00000b"}).on('success', function(doc){
+			var layout = doc.layout
+			if (layout === "OnePage"){
+				res.render('personal', {
+				"com": doc
+				});
+			}
+			else if (layout === "modBuis"){
+				res.render('modBuis', {
+				"com": doc
+				});
+			}
+			else if (layout === "casBuis"){
+				res.render('casAbout', {
+				"com": doc
+				});
+			}
+			else{
+				res.render('index', {
+				"com": doc
+			})
+			}
+			console.log(layout)
 		});
 	};
 };
 exports.about = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.find({},{},function(e,docs){
-			res.render('about', {
-				"index": docs
-			});
+		collection.findOne({_id:"529143b241cc74673f00000b"}).on('success', function(doc){
+			var layout = doc.layout
+			if (layout === "OnePage"){
+				res.render('personal', {
+				"com": doc
+				});
+			}
+			else if (layout === "modBuis"){
+				res.render('modBuis', {
+				"com": doc
+				});
+			}
+			else if (layout === "casBuis"){
+				res.render('casAbout', {
+				"com": doc
+				});
+			}
+			else{
+				res.render('index', {
+				"com": doc
+			})
+			}
+			console.log(layout)
 		});
 	};
 };

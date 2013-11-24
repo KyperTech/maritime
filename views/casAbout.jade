@@ -1,0 +1,99 @@
+!!! 5
+html(lang='en')
+  head
+    title=com.company 
+      |  | About
+    // Bootstrap core CSS
+    link(href='css/bootstrap.css', rel='stylesheet')
+    // Add custom CSS here
+    link(href='css/business-casual.css', rel='stylesheet')
+  body
+    .brand=com.company
+    .address-bar=com.address
+      //|  |
+      //| #{com.addressDesc}
+      |  | 
+      | #{com.city}, #{com.state} #{com.zip}
+      |  |
+      | #{com.phone}
+    nav.navbar.navbar-default(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='index') Business Casual
+        // Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='index.html') Home
+            li
+              a(href='about.html') About
+            li
+              a(href='blog.html') Blog
+            li
+              a(href='contact.html') Contact
+        // /.navbar-collapse
+      // /.container
+    .container
+      .row
+        .box
+          .col-lg-12
+            hr
+            h2.intro-text.text-center
+              | About
+              strong business casual
+            hr
+          .col-md-6
+            img.img-responsive.img-border-left(src='img/slide-2.jpg')
+          .col-md-6
+            p
+              | This is a great place to introduce your company or project and describe what you do.
+            p
+              | Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
+            p
+              | Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          .clearfix
+      .row
+        .box
+          .col-lg-12
+            hr
+            h2.intro-text.text-center
+              | Our
+              strong Team
+            hr
+          .col-sm-4.text-center
+            img.img-responsive(src='http://placehold.it/750x450')
+            h3
+              | John Smith
+              small Job Title
+          .col-sm-4.text-center
+            img.img-responsive(src='http://placehold.it/750x450')
+            h3
+              | John Smith
+              small Job Title
+          .col-sm-4.text-center
+            img.img-responsive(src='http://placehold.it/750x450')
+            h3
+              | John Smith
+              small Job Title
+          .clearfix
+    // /.container
+    footer
+      .container
+        .row
+          .col-lg-12.text-center
+            p Copyright © Company 2013
+    // Bootstrap core JavaScript
+    // Placed at the end of the document so the pages load faster
+    // Make sure to add jQuery - download the most recent version at http://jquery.com/
+    script(src='js/jquery.js')
+    script(src='js/bootstrap.js')
+    script
+      // Activates the Carousel
+      $('.carousel').carousel({
+      interval: 5000
+      })
