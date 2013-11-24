@@ -33,7 +33,7 @@ exports.bootstrap = function(db){
 exports.index = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.findOne({_id:"528d2b5eee20cc8ea8000195"}).on('success', function(doc){
+		collection.findOne({_id:"529143b241cc74673f00000b"}).on('success', function(doc){
 			//console.log("you found it");
 			/* This is an if statement to pick the page layout (one page or others)*/
 			var layout = doc.layout
@@ -57,7 +57,7 @@ exports.index = function(db){
 				"com": doc
 			})
 			}
-			
+			console.log(layout)
 /*
 			res.render('personal', {
 				"com": doc

@@ -29,23 +29,12 @@ block content
       .container
         .row
           .col-lg-4.col-md-4
+          -each service in com.services
             h3
               i.fa.fa-check-circle
-              |  #{com.services.service1.title}
+              |  #{service.title}
             p
-              | #{com.services.service1.desc}
-          .col-lg-4.col-md-4
-            h3
-              i.fa.fa-pencil
-              |  #{com.services.service2.title}
-            p
-              | #{com.services.service2.desc}
-          .col-lg-4.col-md-4
-            h3
-              i.fa.fa-folder-open
-              |  #{com.services.service3.title}
-            p
-              | #{com.services.service3.desc}
+              | #{service.desc}
     .section-colored.text-center
       .container
         .row
@@ -56,26 +45,30 @@ block content
     .section
       .container
         .row
-          if com.navTab.portfolio.active
+          if com.navPortfolio
             .col-lg-12.text-center
               h2 Portfolio
               hr
-            - each project in com.porfolio
+            - each project, p in com.portfolio 
               .col-lg-4.col-md-4.col-sm-6
                 a(href='images/'+ project.img)
                   img.img-responsive.img-home-portfolio(src='images/'+ project.img)
-          if else com.navTab.gallery.active
+                h3=project.title
+                p=project.desc
+        .row
+          if com.galleryOn
             .col-lg-12.text-center
               h2 Gallery
               hr
-            - each tile in com.gallery  
-            .col-lg-4.col-md-4.col-sm-6
-              a(href='images/'+ tile.img)
-                img.img-responsive.img-home-portfolio(src='images/'+ tile.img)
-            a.btn.btn-lg.btn-primary.pull-right(href='/gallery') View Gallery
+            - each tile, t in com.gallery
+              .col-lg-4.col-md-4.col-sm-6
+                a(href='images/'+ tile.img)
+                  img.img-responsive.img-home-portfolio(src='images/'+ tile.img)
+                h2=tile.title
           else
-            h3
-              |No information enabled for this section. Try enabling portfolio or gallery.
+            h2 Nothing enabled to show in this section
+
+              a.btn.btn-lg.btn-primary.pull-right(href='/gallery') View Gallery
     .section-colored
       .container
         .row

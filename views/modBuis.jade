@@ -29,11 +29,12 @@ block content
       .container
         .row
           .col-lg-4.col-md-4
+            -each service in com.services
             h3
               i.fa.fa-check-circle
-              |  #{com.services.service1.title}
+              |  #{service.title}
             p
-              | #{com.services.service1.desc}
+              | #{service.desc}
           .col-lg-4.col-md-4
             h3
               i.fa.fa-pencil
@@ -56,7 +57,7 @@ block content
     .section
       .container
         .row
-          if com.navTab.portfolio
+         // if com.navTab.portfolio
             .col-lg-12.text-center
               h2 Portfolio
               hr
@@ -64,16 +65,16 @@ block content
               .col-lg-4.col-md-4.col-sm-6
                 a(href='images/'+ project.img)
                   img.img-responsive.img-home-portfolio(src='images/'+ project.img)
-          else if com.navTab.services
+          //ifelse com.navTab.services
             .col-lg-12.text-center
               h2 Gallery
               hr
             - each tile in com.gallery  
-            .col-lg-4.col-md-4.col-sm-6
-              a(href='images/'+ tile.img)
-                img.img-responsive.img-home-portfolio(src='images/'+ tile.img)
+              .col-lg-4.col-md-4.col-sm-6
+                a(href='images/'+ tile.img)
+                  img.img-responsive.img-home-portfolio(src='images/'+ tile.img)
             a.btn.btn-lg.btn-primary.pull-right(href='/gallery') View Gallery
-          else 
+          //else 
             h2 Nothing is enabled for this section  
     .section-colored
       .container
