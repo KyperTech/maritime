@@ -29,24 +29,12 @@ block content
       .container
         .row
           .col-lg-4.col-md-4
-            -each service in com.services
-            h3
-              i.fa.fa-check-circle
-              |  #{service.title}
-            p
-              | #{service.desc}
-          .col-lg-4.col-md-4
-            h3
-              i.fa.fa-pencil
-              |  #{com.services.service2.title}
-            p
-              | #{com.services.service2.desc}
-          .col-lg-4.col-md-4
-            h3
-              i.fa.fa-folder-open
-              |  #{com.services.service3.title}
-            p
-              | #{com.services.service3.desc}
+            -each service, s in com.services
+              h3
+                i.fa.fa-check-circle
+                |  #{service.title}
+              p
+                | #{service.desc}
     .section-colored.text-center
       .container
         .row
@@ -61,7 +49,7 @@ block content
             .col-lg-12.text-center
               h2 Portfolio
               hr
-             - each project in com.porfolio
+             - each project, p in com.portfolio
               .col-lg-4.col-md-4.col-sm-6
                 a(href='images/'+ project.img)
                   img.img-responsive.img-home-portfolio(src='images/'+ project.img)
@@ -76,34 +64,37 @@ block content
             a.btn.btn-lg.btn-primary.pull-right(href='/gallery') View Gallery
           //else 
             h2 Nothing is enabled for this section  
-    .section-colored
-      .container
-        .row
+    -each item, i in com.detailedItems
+      if (i % 2 != 0)
+        .section-colored
+          .container
+            .row
+              .col-lg-6.col-md-6.col-sm-6
+                h2=item.title
+                ul
+                  li=item.bullet1
+                  li=item.bullet2
+                  li=item.bullet3
+                  li=item.bullet4
+                  li=item.bullet5
+                  li=item.bullet6
           .col-lg-6.col-md-6.col-sm-6
-            h2=com.detailedItems.item1.title
-            ul
-              li=com.detailedItems.item1.bullet1
-              li=com.detailedItems.item1.bullet2
-              li=com.detailedItems.item1.bullet3
-              li=com.detailedItems.item1.bullet4
-              li=com.detailedItems.item1.bullet5
-              li=com.detailedItems.item1.bullet6
-          .col-lg-6.col-md-6.col-sm-6
-            img.img-responsive(src='images/'+com.detailedItems.item1.img)
-    .section
-      .container
-        .row
-          .col-lg-6.col-md-6.col-sm-6
-            img.img-responsive(src='images/'+com.detailedItems.item1.img)
-          .col-lg-6.col-md-6.col-sm-6
-            h2=com.detailedItems.item2.title
-            ul
-              li=com.detailedItems.item2.bullet1
-              li=com.detailedItems.item2.bullet2
-              li=com.detailedItems.item2.bullet3
-              li=com.detailedItems.item2.bullet4
-              li=com.detailedItems.item2.bullet5
-              li=com.detailedItems.item2.bullet6
+            img.img-responsive(src='images/'+item.img)
+      if (i % 2 == 0)
+        .section
+          .container
+            .row
+              .col-lg-6.col-md-6.col-sm-6
+                img.img-responsive(src='images/'+item.img)
+              .col-lg-6.col-md-6.col-sm-6
+                h2=item.title
+                ul
+                  li=item.bullet1
+                  li=item.bullet2
+                  li=item.bullet3
+                  li=item.bullet4
+                  li=item.bullet5
+                  li=item.bullet6
     .container
       .row.well
         .col-lg-8.col-md-8
