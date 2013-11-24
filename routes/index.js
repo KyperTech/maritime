@@ -42,12 +42,12 @@ exports.index = function(db){
 				"com": doc
 				});
 			}
-			else if (layout === "ModBuis"){
+			else if (layout === "modBuis"){
 				res.render('modBuis', {
 				"com": doc
 				});
 			}
-			else if (layout === "CasBuis"){
+			else if (layout === "casBuis"){
 				res.render('casBuis', {
 				"com": doc
 				});
