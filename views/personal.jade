@@ -148,27 +148,22 @@ html(lang='en')
             h2 Our Work
             hr
         .row
-          .col-md-4.col-md-offset-2.text-center
-            .portfolio-item
-              a(href='#')
-                img.img-portfolio.img-responsive(src='images/portfolio-1.jpg')
-              h4 Cityscape
-          .col-md-4.text-center
-            .portfolio-item
-              a(href='#')
-                img.img-portfolio.img-responsive(src='images/portfolio-2.jpg')
-              h4 Is That On Fire?
-        .row
-          .col-md-4.col-md-offset-2.text-center
-            .portfolio-item
-              a(href='#')
-                img.img-portfolio.img-responsive(src='images/portfolio-3.jpg')
-              h4 Stop Sign
-          .col-md-4.text-center
-            .portfolio-item
-              a(href='#')
-                img.img-portfolio.img-responsive(src='images/portfolio-4.jpg')
-              h4 Narrow Focus
+          - each project, p in com.porfolio
+            .col-md-4.col-md-offset-2.text-center
+              if (p%2 != 0 )
+                .portfolio-item
+                  a(href='#')
+                    img.img-portfolio.img-responsive(src='images/'+ project.img)
+                  h4=project.title
+                  p=project.desc
+              ifelse (p%2 == 0)
+                .col-md-4.text-center
+                  .portfolio-item
+                    a(href='#')
+                      img.img-portfolio.img-responsive(src='images/portfolio-2.jpg')
+                    h4 Is That On Fire?
+              else
+                h2 No projects to display      
     // /Portfolio
     // Call to Action
     .call-to-action

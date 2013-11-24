@@ -10,7 +10,7 @@ var http = require('http');
 var path = require('path');
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('mongodb://mvanlonden:Cactus1!humus@paulo.mongohq.com:10043/DrywallTester');
+var db = monk('mongodb://site:catlove1@dharma.mongohq.com:10094/Boilerplate');
 var SendGrid = require('sendgrid').SendGrid;
 var Validator = require('validator').Validator;
 

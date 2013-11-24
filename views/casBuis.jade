@@ -1,0 +1,115 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title=com.company
+    // Bootstrap core CSS
+    link(href='css/bootstrap.css', rel='stylesheet')
+    // Add custom CSS here
+    link(href='css/business-casual.css', rel='stylesheet')
+  body
+    .brand Business Casual
+    .address-bar
+      | The Plaza | 5483 Start Bootstrap Ave. | Beverly Hills, California 26892 | 555.519.2013
+    nav.navbar.navbar-default(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='index.html') Business Casual
+        // Collect the nav links, forms, and other content for toggling
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='index.html') Home
+            li
+              a(href='about.html') About
+            li
+              a(href='blog.html') Blog
+            li
+              a(href='contact.html') Contact
+        // /.navbar-collapse
+      // /.container
+    .container
+      .row
+        .box
+          .col-lg-12.text-center
+            #carousel-example-generic.carousel.slide
+              // Indicators
+              ol.carousel-indicators.hidden-xs
+                li.active(data-target='#carousel-example-generic', data-slide-to='0')
+                li(data-target='#carousel-example-generic', data-slide-to='1')
+                li(data-target='#carousel-example-generic', data-slide-to='2')
+              // Wrapper for slides
+              .carousel-inner
+                .item.active
+                  img.img-responsive.img-full(src='img/slide-1.jpg')
+                .item
+                  img.img-responsive.img-full(src='img/slide-2.jpg')
+                .item
+                  img.img-responsive.img-full(src='img/slide-3.jpg')
+              // Controls
+              a.left.carousel-control(href='#carousel-example-generic', data-slide='prev')
+                span.icon-prev
+              a.right.carousel-control(href='#carousel-example-generic', data-slide='next')
+                span.icon-next
+            h1
+              small Welcome to
+              br
+              span.brand-name Business Casual
+              hr.tagline-divider
+              small
+                | By
+                strong Start Bootstrap
+      .row
+        .box
+          .col-lg-12
+            hr
+            h2.intro-text.text-center
+              | Build a website
+              strong worth visiting
+            hr
+            img.img-responsive.img-border.img-left(src='img/intro-pic.jpg')
+            hr.visible-xs
+            p
+              | The boxes used in this template are nested inbetween a normal Bootstrap row and the start of your column layout. The boxes will be full-width boxes, so if you want to make them smaller then you will need to customize.
+            p
+              | A huge thanks to
+              a(href='http://join.deathtothestockphoto.com/', target='_blank') Death to the Stock Photo
+              | for allowing us to use the beautiful photos that make this template really come to life. When using this template, make sure your photos are decent. Also make sure that the file size on your photos is kept to a minumum to keep load times to a minimum.
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      .row
+        .box
+          .col-lg-12
+            hr
+            h2.intro-text.text-center
+              | Beautiful boxes
+              strong to showcase your content
+            hr
+            p
+              | Use as many boxes as you like, and put anything you want in them! They are great for just about anything, the sky's the limit!
+            p
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    // /.container
+    footer
+      .container
+        .row
+          .col-lg-12.text-center
+            p Copyright © Company 2013
+    // Bootstrap core JavaScript
+    // Placed at the end of the document so the pages load faster
+    // Make sure to add jQuery - download the most recent version at http://jquery.com/
+    script(src='js/jquery.js')
+    script(src='js/bootstrap.js')
+    script
+      // Activates the Carousel
+      $('.carousel').carousel({
+      interval: 5000
+      })

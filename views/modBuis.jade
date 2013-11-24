@@ -56,15 +56,15 @@ block content
     .section
       .container
         .row
-          if com.navTab.portfolio.active
+          if com.navTab.portfolio
             .col-lg-12.text-center
               h2 Portfolio
               hr
-            - each project in com.porfolio
+             - each project in com.porfolio
               .col-lg-4.col-md-4.col-sm-6
                 a(href='images/'+ project.img)
                   img.img-responsive.img-home-portfolio(src='images/'+ project.img)
-          if else com.navTab.gallery.active
+          else if com.navTab.services
             .col-lg-12.text-center
               h2 Gallery
               hr
@@ -73,55 +73,36 @@ block content
               a(href='images/'+ tile.img)
                 img.img-responsive.img-home-portfolio(src='images/'+ tile.img)
             a.btn.btn-lg.btn-primary.pull-right(href='/gallery') View Gallery
-          else
-            h3
-              |No information enabled for this section. Try enabling portfolio or gallery.
+          else 
+            h2 Nothing is enabled for this section  
     .section-colored
       .container
         .row
           .col-lg-6.col-md-6.col-sm-6
-            h2 Modern Business Features Include:
+            h2=com.detailedItems.item1.title
             ul
-              li Bootstrap 3 Framework
-              li Mobile Responsive Design
-              li Predefined File Paths
-              li Working PHP Contact Page
-              li Minimal Custom CSS Styles
-              li Unstyled: Add Your Own Style and Content!
-              li Font-Awesome fonts come pre-installed!
-              li
-                | 100%
-                strong Free
-                | to Use
-              li Open Source: Use for any project, private or commercial!
+              li=com.detailedItems.item1.bullet1
+              li=com.detailedItems.item1.bullet2
+              li=com.detailedItems.item1.bullet3
+              li=com.detailedItems.item1.bullet4
+              li=com.detailedItems.item1.bullet5
+              li=com.detailedItems.item1.bullet6
           .col-lg-6.col-md-6.col-sm-6
-            img.img-responsive(src='http://placehold.it/700x450/ffffff/cccccc')
+            img.img-responsive(src='images/'+com.detailedItems.item1.img)
     .section
       .container
         .row
           .col-lg-6.col-md-6.col-sm-6
-            img.img-responsive(src='http://placehold.it/700x450')
+            img.img-responsive(src='images/'+com.detailedItems.item1.img)
           .col-lg-6.col-md-6.col-sm-6
-            h2 Modern Business Features Include:
+            h2=com.detailedItems.item2.title
             ul
-              li Bootstrap 3 Framework
-              li Mobile Responsive Design
-              li Predefined File Paths
-              li Working PHP Contact Page
-              li Minimal Custom CSS Styles
-              li Unstyled: Add Your Own Style and Content!
-              li Font-Awesome fonts come pre-installed!
-              li
-                | 100%
-                strong Free
-                | to Use
-              li Open Source: Use for any project, private or commercial! 
+              li=com.detailedItems.item2.bullet1
+              li=com.detailedItems.item2.bullet2
+              li=com.detailedItems.item2.bullet3
+              li=com.detailedItems.item2.bullet4
+              li=com.detailedItems.item2.bullet5
+              li=com.detailedItems.item2.bullet6
     .container
       .row.well
         .col-lg-8.col-md-8
-          h4
-            | 'Modern Business' is a ready-to-use, Bootstrap 3 updated, multi-purpose HTML theme!
-          p
-            | For more templates and more page options that you can integrate into this website template, visit Start Bootstrap!
-        .col-lg-4.col-md-4
-          a.btn.btn-lg.btn-primary.pull-right(href='http://startbootstrap.com') See More Templates! 
