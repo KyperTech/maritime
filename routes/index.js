@@ -39,22 +39,26 @@ exports.index = function(db){
 			var layout = doc.layout
 			if (layout === "OnePage"){
 				res.render('personal', {
-				"com": doc
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else if (layout === "modBuis"){
 				res.render('modBuis', {
-				"com": doc
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else if (layout === "casBuis"){
 				res.render('casBuis', {
-				"com": doc
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else{
 				res.render('index', {
-				"com": doc
+				"com": doc,
+				title: doc.company
 			})
 			}
 			console.log(layout)
