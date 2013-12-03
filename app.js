@@ -60,17 +60,8 @@ app.get('/about', routes.about(db));
 app.get('/services', routes.services(db));
 app.get('/contact', routes.contact(db));
 app.get('/blog', routes.blog(db));
-app.get('/admin', routes.dash(db));
-app.get('/build', routes.build(db));
-/*
-app.get('/users', user.list);
-app.get('/helloworld', routes.helloworld);
-app.get('/userlist', routes.userlist(db));
-*/
-app.get('/newuser', routes.newuser);
+app.get('/porfolio', routes.portfolio(db));
 //app.get('/bootstrap', routes.bootstrap(db));
-
-app.post('/edit', routes.edit(db));
 
 function csrf(req, res, next) {
   res.locals.token = req.session._csrf;

@@ -5,8 +5,8 @@ block content
         .row
             .col-lg-12
               h1.page-header
-                | Contact 
-                small We'd Love to Hear From You!
+                | Contact  
+                small  We'd Love to Hear From You!
               //ol.breadcrumb
                 li
                   a(href='index.html') Home
@@ -16,65 +16,55 @@ block content
           .row
             .col-sm-8
               h3 Contact
-              p=com.contact.desc
-              include messages
-              form(role='form', method='POST', action='/contact')
-                .row
-                  .form-group.col-lg-4
-                    label(for='message_name') Name
-                    input#input1.form-control(type='text', placeholder='Name', name='message[name]', value=message.name)
-                  .form-group.col-lg-4
-                    label(for='message_email') Email Address
-                    input#input2.form-control(type='text', placeholder='Email', name='message[email]', value=message.email)
-                  .form-group.col-lg-4
-                    label(for='input3') Phone Number
-                    input#input3.form-control(type='phone', name='contact_phone')
-                  .clearfix
-                  .form-group.col-lg-12
-                    label(for='message_message') Message
-                    textarea#input4.form-control(placeholder='Enter message', rows='6', name='message[message]')=message.message
-                  .form-group.col-lg-12
-                    input(type='hidden', name='save', value='contact')
-                    button.btn.btn-primary(type='submit') Submit
+              //p=com.contact.desc
+              .span8
+                form
+                  .controls.controls-row
+                    input#name.span3(name='name', type='text', placeholder='Name')
+                    input#email.span3(name='email', type='email', placeholder='Email address')
+                  .controls
+                    textarea#message.span(name='message', placeholder='Your Message', rows='5')
+                  .controls
+                    button#contact-submit.btn.btn-primary.input-medium.pull-left(type='submit') Send  
             .col-sm-4
               h3=com.company
               h5=com.slogan
-              p=com.contact.address
+              p=com.address
                 br
-                | #{com.contact.city}, #{com.contact.state} #{com.contact.zip}
+                | #{com.city}, #{com.state} #{com.zip}
                 br
               p
                 i.fa.fa-phone
-                | :#{com.contact.phone}
+                | :#{com.phone}
               p
                 i.fa.fa-envelope-o
                 abbr(title='Email')
                 | : 
-                a(href='mailto:' + com.contact.email)=com.contact.email
+                a(href='mailto:' + com.email)=com.email
 
               p
                 i.fa.fa-clock-o
                 abbr(title='Hours')
                 | : Monday:
-                |#{com.schedule.monday}
+                |#{com.monday}
                 br
                 | Tuesday :
-                |#{com.schedule.tuesday}
+                |#{com.tuesday}
                 br
                 | Wednesday :
-                |#{com.schedule.wednesday}
+                |#{com.wednesday}
                 br
                 | Thursday :
-                |#{com.schedule.thursday}
+                |#{com.thursday}
                 br
                 |Friday: 
-                |#{com.schedule.friday}
+                |#{com.friday}
                 br
                 | Saturday :
-                |#{com.schedule.saturday}
+                |#{com.saturday}
                 br
                 |Sunday :
-                |#{com.schedule.sunday}
+                |#{com.sunday}
 
               ul.list-unstyled.list-inline.list-social-icons
                 li.tooltip-social.facebook-link
