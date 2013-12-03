@@ -1,0 +1,73 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title=title
+    // Bootstrap core CSS
+    link(href='css/bootstrap.css', rel='stylesheet')
+    // Add custom CSS here
+    link(href='css/modern-business.css', rel='stylesheet')
+    link(href='font-awesome/css/font-awesome.min.css', rel='stylesheet')
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-ex1-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          // You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it)
+          a.navbar-brand(href='/')= com.company
+        .collapse.navbar-collapse.navbar-ex1-collapse
+          ul.nav.navbar-nav.navbar-right
+            if com.navAbout
+              li
+                a(href='/about') About
+            if com.navServices
+              li
+                a(href='/services') Services
+            if com.navContact
+              li
+                a(href='/contact') Contact
+            if com.navPortfolio
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                  | Portfolio
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    a(href='portfolio-1-col.html') 1 Column Portfolio
+                  li
+                    a(href='portfolio-2-col.html') 2 Column Portfolio
+                  li
+                    a(href='portfolio-3-col.html') 3 Column Portfolio
+                  li
+                    a(href='portfolio-4-col.html') 4 Column Portfolio
+                  li
+                    a(href='portfolio-item.html') Single Portfolio Item
+            if com.navBlog
+              li.dropdown
+                a.dropdown-toggle(href='#', data-toggle='dropdown')
+                  | Blog
+                  b.caret
+                ul.dropdown-menu
+                  li
+                    a(href='/blog-home-1') Blog Home 1
+                  li
+                    a(href='blog-home-2.html') Blog Home 2
+                  li
+                    a(href='blog-post.html') Blog Post
+    block content
+    .container
+      hr
+      footer
+        .row
+          .col-lg-12
+            p Copyright © Company 2013
+    script(src='/js/jquery-1.10.2.js')
+    script(src='/js/bootstrap.js')
+    script(src='/js/modern-business.js')
