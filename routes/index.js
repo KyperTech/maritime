@@ -33,7 +33,11 @@ exports.bootstrap = function(db){
 exports.index = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
+<<<<<<< HEAD
 		collection.findOne({_id:"5298ffa676fc548fe4000009"}).on('success', function(doc){
+=======
+		collection.findOne({_id:"52965d4f39745d0000000009"}).on('success', function(doc){
+>>>>>>> ed02ac84525ee10de56e6d4ebc78193b1ddc9eaa
 			//console.log("you found it");
 			/* This is an if statement to pick the page layout (one page or others)*/
 			var layout = doc.layout
@@ -73,7 +77,11 @@ exports.index = function(db){
 exports.dash = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
+<<<<<<< HEAD
 		collection.findOne({_id:"5298ffa676fc548fe4000009"}).on('success', function(doc){
+=======
+		collection.findOne({_id:"52965d4f39745d0000000009"}).on('success', function(doc){
+>>>>>>> ed02ac84525ee10de56e6d4ebc78193b1ddc9eaa
 			var layout = doc.layout
 			if (layout === "OnePage"){
 				res.render('personal', {
@@ -103,6 +111,7 @@ exports.about = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
 		collection.findOne({_id:"5298ffa676fc548fe4000009"}).on('success', function(doc){
+
 			var layout = doc.layout
 			if (layout === "OnePage"){
 				res.render('personal', {
