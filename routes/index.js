@@ -4,7 +4,7 @@
  */
 //var dbConfig = require("../app")(dbId);
 //var dbId = dbConfig.dbId;
-var dbId = "52965d4f39745d0000000009";
+var dbId = "52995a14db7c24000000000d";
 console.log(dbId);
 exports.index = function(db){
 	return function(req, res){
