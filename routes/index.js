@@ -19,13 +19,13 @@ exports.index = function(db){
 				title: doc.company
 				});
 			}
-			if (layout === "modBuis"){
+			else if (layout === "modBuis"){
 				res.render('modBuis', {
 				"com": doc,
 				title: doc.company
 				});
 			}
-			if (layout === "casBuis"){
+			else if (layout === "casBuis"){
 				res.render('casBuis', {
 				"com": doc,
 				title: doc.company
@@ -52,12 +52,12 @@ exports.about = function(db){
 				"com": doc
 				});
 			}
-			if (layout === "modBuis"){
+			else if (layout === "modBuis"){
 				res.render('modAbout', {
 				"com": doc
 				});
 			}
-			if (layout === "casBuis"){
+			else if (layout === "casBuis"){
 				res.render('casAbout', {
 				"com": doc
 				});
@@ -77,17 +77,18 @@ exports.services = function(db){
 		var collection = db.get('sites');
 		collection.findOne({_id:dbId}).on('success', function(doc){
 			var layout = doc.layout
+			console.log(layout)
 			if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc
 				});
 			}
-			if (layout === "modBuis"){
+			else if (layout === "modBuis"){
 				res.render('modServices', {
 				"com": doc
 				});
 			}
-			if (layout === "casBuis"){
+			else if (layout === "casBuis"){
 				res.render('casServices', {
 				"com": doc
 				});
@@ -95,6 +96,7 @@ exports.services = function(db){
 			else{
 				res.render('index', {
 				"com": doc
+
 			})
 			}
 		});
@@ -106,23 +108,23 @@ exports.contact = function(db){
 		var collection = db.get('sites');
 		collection.findOne({_id:dbId}).on('success', function(doc){
 			var layout = doc.layout
+			console.log(layout)
 			if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc
 				});
 			}
-			if (layout === "modBuis"){
+			else if (layout === "modBuis"){
 				res.render('modContact', {
 				"com": doc
 				});
 			}
-			//needs to be changed back to casAbout *****
-			if (layout === "casBuis"){
-				res.render('modAbout', {
+			else if (layout === "casBuis"){
+				res.render('modContact', {
 				"com": doc
 				});
 			}
-			else{
+			else{console.log('wrong render')
 				res.render('index', {
 				"com": doc
 			})
@@ -150,13 +152,13 @@ exports.blog = function(db){
 				"com": doc
 				});
 			}
-			if (layout === "modBuis"){
+			else if (layout === "modBuis"){
 				res.render('modBlog', {
 				"com": doc
 				});
 			}
 			//needs to be changed back to casAbout *****
-			if (layout === "casBuis"){
+			else if (layout === "casBuis"){
 				res.render('casBlog', {
 				"com": doc
 				});

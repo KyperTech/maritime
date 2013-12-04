@@ -11,7 +11,6 @@ var path = require('path');
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('mongodb://site:catlove1@dharma.mongohq.com:10094/Boilerplate');
-var dbId = "52995a14db7c24000000000d";
 var SendGrid = require('sendgrid').SendGrid;
 var Validator = require('validator').Validator;
 
