@@ -64,37 +64,7 @@ block content
             a.btn.btn-lg.btn-primary.pull-right(href='/gallery') View Gallery
           //else 
             h2 Nothing is enabled for this section  
-    -each item, i in com.detailedItems
-      if (i % 2 != 0)
-        .section-colored
-          .container
-            .row
-              .col-lg-6.col-md-6.col-sm-6
-                h2=item.title
-                ul
-                  li=item.bullet1
-                  li=item.bullet2
-                  li=item.bullet3
-                  li=item.bullet4
-                  li=item.bullet5
-                  li=item.bullet6
-              .col-lg-6.col-md-6.col-sm-6
-                img.img-responsive(src='images/'+item.img)
-      if (i % 2 == 0)
-        .section
-          .container
-            .row
-              .col-lg-6.col-md-6.col-sm-6
-                img.img-responsive(src='images/'+item.img)
-              .col-lg-6.col-md-6.col-sm-6
-                h2=item.title
-                ul
-                  li=item.bullet1
-                  li=item.bullet2
-                  li=item.bullet3
-                  li=item.bullet4
-                  li=item.bullet5
-                  li=item.bullet6
+    
     .container
       .row.well
         .col-lg-8.col-md-8

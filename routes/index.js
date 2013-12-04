@@ -2,11 +2,14 @@
 /*
  * GET home page.
  */
-
+//var dbConfig = require("../app")(dbId);
+//var dbId = dbConfig.dbId;
+var dbId = "52965d4f39745d0000000009";
+console.log(dbId);
 exports.index = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.findOne({_id:"52965d4f39745d0000000009"}).on('success', function(doc){
+		collection.findOne({_id:dbId}).on('success', function(doc){
 			//console.log("you found it");
 			/* This is an if statement to pick the page layout (one page or others)*/
 			var layout = doc.layout
@@ -16,13 +19,13 @@ exports.index = function(db){
 				title: doc.company
 				});
 			}
-			else if (layout === "modBuis"){
+			if (layout === "modBuis"){
 				res.render('modBuis', {
 				"com": doc,
 				title: doc.company
 				});
 			}
-			else if (layout === "casBuis"){
+			if (layout === "casBuis"){
 				res.render('casBuis', {
 				"com": doc,
 				title: doc.company
@@ -34,7 +37,7 @@ exports.index = function(db){
 				title: doc.company
 			})
 			}
-			//console.log(layout)
+			console.log(layout)
 		}); 
 	};
 };
@@ -42,19 +45,19 @@ exports.index = function(db){
 exports.dash = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.findOne({_id:"52965d4f39745d0000000009"}).on('success', function(doc){
+		collection.findOne({_id:dbId}).on('success', function(doc){
 			var layout = doc.layout
 			if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc
 				});
 			}
-			else if (layout === "modBuis"){
+			if (layout === "modBuis"){
 				res.render('modBuis', {
 				"com": doc
 				});
 			}
-			else if (layout === "casBuis"){
+			if (layout === "casBuis"){
 				res.render('casAbout', {
 				"com": doc
 				});
@@ -71,20 +74,20 @@ exports.dash = function(db){
 exports.about = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.findOne({_id:"5298ffa676fc548fe4000009"}).on('success', function(doc){
-
+		collection.findOne({_id:dbId}).on('success', function(doc){
 			var layout = doc.layout
 			if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc
 				});
 			}
-			else if (layout === "modBuis"){
-				res.render('modBuis', {
+			if (layout === "modBuis"){
+				res.render('modAbout', {
 				"com": doc
 				});
 			}
-			else if (layout === "casBuis"){
+			//needs to be changed back to casAbout *****
+			if (layout === "casBuis"){
 				res.render('casAbout', {
 				"com": doc
 				});
@@ -102,10 +105,29 @@ exports.about = function(db){
 exports.services = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.findOne({_id:"52965d4f39745d0000000009"}).on('success', function(doc){
-			res.render('services', {
+		collection.findOne({_id:dbId}).on('success', function(doc){
+			var layout = doc.layout
+			if (layout === "OnePage"){
+				res.render('personal', {
 				"com": doc
-			});
+				});
+			}
+			if (layout === "modBuis"){
+				res.render('modServices', {
+				"com": doc
+				});
+			}
+			//needs to be changed back to casAbout *****
+			if (layout === "casBuis"){
+				res.render('modAbout', {
+				"com": doc
+				});
+			}
+			else{
+				res.render('index', {
+				"com": doc
+			})
+			}
 		});
 	};
 };
@@ -113,7 +135,7 @@ exports.services = function(db){
 exports.contact = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.findOne({_id:"52965d4f39745d0000000009"}).on('success', function(doc){
+		collection.findOne({_id:dbId}).on('success', function(doc){
 			res.render('contact', {
 				"com": doc
 			});
@@ -123,7 +145,7 @@ exports.contact = function(db){
 exports.portfolio = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.findOne({_id:"52965d4f39745d0000000009"}).on('success', function(doc){
+		collection.findOne({_id:dbId}).on('success', function(doc){
 			res.render('portfolio', {
 				"com": doc
 			});
@@ -133,7 +155,7 @@ exports.portfolio = function(db){
 exports.blog = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
-		collection.findOne({_id:"52965d4f39745d0000000009"}).on('success', function(doc){
+		collection.findOne({_id:dbId}).on('success', function(doc){
 			res.render('blog', {
 				"com": doc
 			});

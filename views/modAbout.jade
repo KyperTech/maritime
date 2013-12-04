@@ -5,11 +5,11 @@ block content
         .row
             .col-lg-12
               h1.page-header
-                | About 
-                small It's Nice to Meet You!
+                | About  
+                small  It's Nice to Meet You!
               //ol.breadcrumb
                 li
-                  a(href='index.html') Home
+                  a(href='/') Home
                 li.active About
           .row
             .col-md-6
@@ -23,7 +23,7 @@ block content
           .row
             .col-lg-12
               h2.page-header Our Team
-            each person, p in com.about.people
+            each person, p in com.people
               .col-sm-4
                 img.img-responsive(src='http://placehold.it/750x450')
                 h3 #{person.name} 
