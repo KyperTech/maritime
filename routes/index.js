@@ -57,7 +57,6 @@ exports.about = function(db){
 				"com": doc
 				});
 			}
-			//needs to be changed back to casAbout *****
 			if (layout === "casBuis"){
 				res.render('casAbout', {
 				"com": doc
@@ -107,9 +106,28 @@ exports.contact = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
 		collection.findOne({_id:dbId}).on('success', function(doc){
-			res.render('contact', {
+			var layout = doc.layout
+			if (layout === "OnePage"){
+				res.render('personal', {
 				"com": doc
-			});
+				});
+			}
+			if (layout === "modBuis"){
+				res.render('modContact', {
+				"com": doc
+				});
+			}
+			//needs to be changed back to casAbout *****
+			if (layout === "casBuis"){
+				res.render('modAbout', {
+				"com": doc
+				});
+			}
+			else{
+				res.render('index', {
+				"com": doc
+			})
+			}
 		});
 	};
 };
