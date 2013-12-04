@@ -1,0 +1,82 @@
+extends modBuisLayout
+block content  
+  body  
+    .container
+        .row
+            .col-lg-12
+              h1.page-header
+                | Contact  
+                small  We'd Love to Hear From You!
+              //ol.breadcrumb
+                li
+                  a(href='index.html') Home
+                li.active Contact
+            .col-lg-12
+              iframe(width='100%', height='400px', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://maps.google.com/maps?hl=en&ie=UTF8&ll=37.0625,-95.677068&spn=56.506174,79.013672&t=m&z=4&output=embed')
+          .row
+            .col-sm-8
+              h3 Contact
+              //p=com.contact.desc
+              .span8
+                form
+                  .controls.controls-row
+                    input#name.span3(name='name', type='text', placeholder='Name')
+                    input#email.span3(name='email', type='email', placeholder='Email address')
+                  .controls
+                    textarea#message.span(name='message', placeholder='Your Message', rows='5')
+                  .controls
+                    button#contact-submit.btn.btn-primary.input-medium.pull-left(type='submit') Send  
+            .col-sm-4
+              h3=com.company
+              h5=com.slogan
+              p=com.address
+                br
+                | #{com.city}, #{com.state} #{com.zip}
+                br
+              p
+                i.fa.fa-phone
+                | :#{com.phone}
+              p
+                i.fa.fa-envelope-o
+                abbr(title='Email')
+                | : 
+                a(href='mailto:' + com.email)=com.email
+
+              p
+                i.fa.fa-clock-o
+                abbr(title='Hours')
+                | : Monday:
+                |#{com.monday}
+                br
+                | Tuesday :
+                |#{com.tuesday}
+                br
+                | Wednesday :
+                |#{com.wednesday}
+                br
+                | Thursday :
+                |#{com.thursday}
+                br
+                |Friday: 
+                |#{com.friday}
+                br
+                | Saturday :
+                |#{com.saturday}
+                br
+                |Sunday :
+                |#{com.sunday}
+
+              ul.list-unstyled.list-inline.list-social-icons
+                li.tooltip-social.facebook-link
+                  a(href='#facebook-page', data-toggle='tooltip', data-placement='top', title='Facebook')
+                    i.fa.fa-facebook-square.fa-2x
+                li.tooltip-social.linkedin-link
+                  a(href='#linkedin-company-page', data-toggle='tooltip', data-placement='top', title='LinkedIn')
+                    i.fa.fa-linkedin-square.fa-2x
+                li.tooltip-social.twitter-link
+                  a(href='#twitter-profile', data-toggle='tooltip', data-placement='top', title='Twitter')
+                    i.fa.fa-twitter-square.fa-2x
+                li.tooltip-social.google-plus-link
+                  a(href='#google-plus-page', data-toggle='tooltip', data-placement='top', title='Google+')
+                    i.fa.fa-google-plus-square.fa-2x
+    
