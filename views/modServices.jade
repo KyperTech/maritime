@@ -75,34 +75,11 @@ block content
         .row
           .col-lg-12
             h2.page-header Service Images
-          .col-sm-4
-            img.img-responsive(src='http://placehold.it/750x450')
-            h3 Service One
-            p
-              | Service one description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.
-            a.btn.btn-link.btn-sm.pull-right
-              | More
-              i.fa.fa-angle-right
-          .col-sm-4
-            img.img-responsive(src='http://placehold.it/750x450')
-            h3 Service Two
-            p
-              | Service two description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.
-            a.btn.btn-link.btn-sm.pull-right
-              | More
-              i.fa.fa-angle-right
-          .col-sm-4
-            img.img-responsive(src='http://placehold.it/750x450')
-            h3 Service Three
-            p
-              | Service three description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst.
-            a.btn.btn-link.btn-sm.pull-right
-              | More
-              i.fa.fa-angle-right
-      .container
-        hr
-        footer
-          .row
-            .col-lg-12
-              p Copyright © Company 2013
-      // /.container
+          -each service, s in com.services
+            .col-sm-4
+              img.img-responsive(onError="this.onerror=null;this.src='/images/annapolis03.jpg';", src='https://s3.amazonaws.com/KyperImageHost/#{com._id}/site/#{service.csrf}#{service.contentType}')
+              h3=service.title
+              p=service.description
+              a.btn.btn-link.btn-sm.pull-right
+                | More
+                i.fa.fa-angle-right

@@ -136,9 +136,27 @@ exports.portfolio = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
 		collection.findOne({_id:dbId}).on('success', function(doc){
-			res.render('portfolio', {
+		var layout = doc.layout
+			if (layout === "OnePage"){
+				res.render('personal', {
 				"com": doc
-			});
+				});
+			}
+			else if (layout === "modBuis"){
+				res.render('modPort', {
+				"com": doc
+				});
+			}
+			else if (layout === "casBuis"){
+				res.render('casPort', {
+				"com": doc
+				});
+			}
+			else{
+				res.render('modPort', {
+				"com": doc
+			})
+			}
 		});
 	};
 };

@@ -60,7 +60,7 @@ app.get('/about', routes.about(db));
 app.get('/services', routes.services(db));
 app.get('/contact', routes.contact(db));
 app.get('/blog', routes.blog(db));
-app.get('/porfolio', routes.portfolio(db));
+app.get('/portfolio', routes.portfolio(db));
 //app.get('/bootstrap', routes.bootstrap(db));
 
 function csrf(req, res, next) {
