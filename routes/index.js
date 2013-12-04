@@ -174,9 +174,28 @@ exports.blog = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
 		collection.findOne({_id:dbId}).on('success', function(doc){
-			res.render('blog', {
+		var layout = doc.layout
+			if (layout === "OnePage"){
+				res.render('personal', {
 				"com": doc
-			});
+				});
+			}
+			if (layout === "modBuis"){
+				res.render('modBlog', {
+				"com": doc
+				});
+			}
+			//needs to be changed back to casAbout *****
+			if (layout === "casBuis"){
+				res.render('casBlog', {
+				"com": doc
+				});
+			}
+			else{
+				res.render('index', {
+				"com": doc
+			})
+			}
 		});
 	};
 };
