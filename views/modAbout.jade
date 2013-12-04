@@ -23,12 +23,6 @@ block content
           .row
             .col-lg-12
               h2.page-header Our Team
-            each person, p in com.people
-              .col-sm-4
-                img.img-responsive(src='http://placehold.it/750x450')
-                h3 #{person.name} 
-                  small #{person.job}
-                p= person.jobDesc
                 ul.list-unstyled.list-inline.list-social-icons
                   li.tooltip-social.facebook-link
                     a(href='#facebook-profile', data-toggle='tooltip', data-placement='top', title='Facebook')

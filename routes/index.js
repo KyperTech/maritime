@@ -87,9 +87,8 @@ exports.services = function(db){
 				"com": doc
 				});
 			}
-			//needs to be changed back to casAbout *****
 			if (layout === "casBuis"){
-				res.render('modAbout', {
+				res.render('casServices', {
 				"com": doc
 				});
 			}
@@ -163,30 +162,10 @@ exports.blog = function(db){
 				});
 			}
 			else{
-				res.render('index', {
+				res.render('modBlog', {
 				"com": doc
 			})
 			}
 		});
 	};
 };
-
-exports.login = function(db){
-	return function(req, res){
-		var user = req.body.user
-		 ,  password = req.body.password;
-		 
-
-
-		var collection = db.get('user');
-
-		collection.findById({
-			_id: "528995605d7780a5d50002cd"
-		},
-			function(err, doc){
-				
-			}
-		);
-		res.redirect("/admin");
-	}
-}
