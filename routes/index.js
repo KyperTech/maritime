@@ -42,35 +42,6 @@ exports.index = function(db){
 	};
 };
 
-exports.dash = function(db){
-	return function(req, res){
-		var collection = db.get('sites');
-		collection.findOne({_id:dbId}).on('success', function(doc){
-			var layout = doc.layout
-			if (layout === "OnePage"){
-				res.render('personal', {
-				"com": doc
-				});
-			}
-			if (layout === "modBuis"){
-				res.render('modBuis', {
-				"com": doc
-				});
-			}
-			if (layout === "casBuis"){
-				res.render('casAbout', {
-				"com": doc
-				});
-			}
-			else{
-				res.render('index', {
-				"com": doc
-			})
-			}
-			console.log(layout)
-		});
-	};
-};
 exports.about = function(db){
 	return function(req, res){
 		var collection = db.get('sites');

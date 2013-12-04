@@ -11,8 +11,7 @@ var path = require('path');
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('mongodb://site:catlove1@dharma.mongohq.com:10094/Boilerplate');
-var dbId = "52965d4f39745d0000000009";
-exports.dbId = dbId;
+var dbId = "52995a14db7c24000000000d";
 var SendGrid = require('sendgrid').SendGrid;
 var Validator = require('validator').Validator;
 
@@ -46,7 +45,7 @@ app.configure('development', function() {
 
 app.configure('production', function() {
   app.use(express.errorHandler());
-  sendgrid = new SendGrid(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
+  sendgrid = new SendGrid('mvanlonden', 'lamplamp1');
 });
 
 app.locals.errors = {};
@@ -88,34 +87,39 @@ function validate(message) {
 
 function sendEmail(message, fn) {
   sendgrid.send({
-    to: process.env.EMAIL_RECIPIENT
+    to: 'melvanlonden@gmail.com'
   , from: message.email
   , subject: 'Contact Message'
   , text: message.message
   }, fn);
 }
 
-app.get('/contact', csrf, routes.contact(db), function(req, res) {
-  res.render('contact');
-});
-
 app.post('/contact', csrf, function(req, res) {
-  var message = req.body.message
-    , errors = validate(message)
+  var message = req.body;
+  console.log(message);
+  var errors = validate(message)
     , locals = {}
     ;
 
   function render() {
-    res.render('contact', locals);
+    var collection = db.get('sites');
+    collection.findOne({_id:dbId}).on('success', function(doc){
+      res.render('contact', {
+        "com": doc
+      });
+    });
   }
-
+  
   if (errors.length === 0) {
     sendEmail(message, function(success) {
       if (!success) {
         locals.error = 'Error sending message';
         locals.message = message;
-      } else {
+        console.log('message aint sendin');
+      } 
+      else {
         locals.notice = 'Your message has been sent.';
+        console.log('sent');
       }
       render();
     });
@@ -124,6 +128,7 @@ app.post('/contact', csrf, function(req, res) {
     locals.errors = errors;
     locals.message = message;
     render();
+    console.log('state of seige');
   }
 });
 

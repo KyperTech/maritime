@@ -1,6 +1,7 @@
 exports.mailSend = function(){
   return function csrf(req, res, next) {
-    res.locals.token = req.session._csrf;
+    res.locals.token = req.body._csrf;
+    console.log(res.locals.token);
     next();
   }
 

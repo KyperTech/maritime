@@ -1,4 +1,4 @@
-extends layout-1
+extends modBuisLayout
 block content  
   body  
     .container
@@ -18,7 +18,8 @@ block content
               h3 Contact
               //p=com.contact.desc
               .span8
-                form
+                form(method='post', action='/contact')
+                  input(type="hidden", name="_csrf", value="#{csrf_token}")
                   .controls.controls-row
                     input#name.span3(name='name', type='text', placeholder='Name')
                     input#email.span3(name='email', type='email', placeholder='Email address')
