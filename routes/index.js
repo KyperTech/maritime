@@ -6,6 +6,7 @@
 //var dbId = dbConfig.dbId;
 var dbId = "52995a14db7c24000000000d";
 console.log(dbId);
+ 
 exports.index = function(db){
 	return function(req, res){
 		var collection = db.get('sites');
@@ -13,7 +14,13 @@ exports.index = function(db){
 			//console.log("you found it");
 			/* This is an if statement to pick the page layout (one page or others)*/
 			var layout = doc.layout
-			if (layout === "OnePage"){
+			if (layout === "clean"){
+				res.render('cleanHome', {
+				"com": doc,
+				title: doc.company
+				});
+			}
+			else if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc,
 				title: doc.company
@@ -47,9 +54,16 @@ exports.about = function(db){
 		var collection = db.get('sites');
 		collection.findOne({_id:dbId}).on('success', function(doc){
 			var layout = doc.layout
-			if (layout === "OnePage"){
+			if (layout === "clean"){
+				res.render('cleanAbout', {
+				"com": doc,
+				title: doc.company
+				});
+			}
+			else if (layout === "OnePage"){
 				res.render('personal', {
-				"com": doc
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else if (layout === "modBuis"){
@@ -78,9 +92,16 @@ exports.services = function(db){
 		collection.findOne({_id:dbId}).on('success', function(doc){
 			var layout = doc.layout
 			console.log(layout)
-			if (layout === "OnePage"){
+			if (layout === "clean"){
+				res.render('cleanHome', {
+				"com": doc,
+				title: doc.company
+				});
+			}
+			else if (layout === "OnePage"){
 				res.render('personal', {
-				"com": doc
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else if (layout === "modBuis"){
@@ -109,9 +130,16 @@ exports.contact = function(db){
 		collection.findOne({_id:dbId}).on('success', function(doc){
 			var layout = doc.layout
 			console.log(layout)
-			if (layout === "OnePage"){
+			if (layout === "clean"){
+				res.render('cleanContact', {
+				"com": doc,
+				title: doc.company
+				});
+			}
+			else if (layout === "OnePage"){
 				res.render('personal', {
-				"com": doc
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else if (layout === "modBuis"){
@@ -137,9 +165,16 @@ exports.portfolio = function(db){
 		var collection = db.get('sites');
 		collection.findOne({_id:dbId}).on('success', function(doc){
 		var layout = doc.layout
-			if (layout === "OnePage"){
+			if (layout === "clean"){
+				res.render('cleanPort', {
+				"com": doc,
+				title: doc.company
+				});
+			}
+			else if (layout === "OnePage"){
 				res.render('personal', {
-				"com": doc
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else if (layout === "modBuis"){
@@ -165,9 +200,16 @@ exports.blog = function(db){
 		var collection = db.get('sites');
 		collection.findOne({_id:dbId}).on('success', function(doc){
 		var layout = doc.layout
-			if (layout === "OnePage"){
+			if (layout === "clean"){
+				res.render('cleanBlog', {
+				"com": doc,
+				title: doc.company
+				});
+			}
+			else if (layout === "OnePage"){
 				res.render('personal', {
-				"com": doc
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else if (layout === "modBuis"){

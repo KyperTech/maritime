@@ -14,72 +14,23 @@ block content
         // /.row
         // Service Paragraphs
         .row
-          .col-md-8
-            h2.page-header Our Premium Services
-            p
-              | Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-          .col-md-4
-            h2.page-header Something More
-            p
-              | Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.
-            a.btn.btn-primary(href='#') Click Me!
+          .col-md-12
+            -each service, s in com.services
+              if s===0
+                h2.page-header=service.title
+                  h4=service.description
         // /.row
-        // Service Tabs
+        hr
         .row
           .col-lg-12
-            h2.page-header Tabbed Services
-            ul#myTab.nav.nav-tabs
-              li.active
-                a(href='#service-one', data-toggle='tab') Service One
-              li
-                a(href='#service-two', data-toggle='tab') Service Two
-              li
-                a(href='#service-three', data-toggle='tab') Service Three
-              li
-                a(href='#service-four', data-toggle='tab') Service Four
-              li
-                a(href='#service-five', data-toggle='tab') Service Five
-            #myTabContent.tab-content
-              #service-one.tab-pane.fade.in.active
-                i.fa.fa-gear.pull-left.fa-4x
-                p
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis. Fusce aliquet dui ut felis rhoncus, vitae molestie mauris auctor. Donec pellentesque feugiat leo a adipiscing. Pellentesque quis tristique eros, sed rutrum mauris.
-                p
-                  | Nam fringilla quis enim in eleifend. Suspendisse sed lectus mauris. Nam commodo, arcu et posuere placerat, tellus tortor dignissim eros, sit amet eleifend urna lorem sit amet nulla. Praesent sem nibh, vulputate nec congue eu, dapibus vitae augue. Suspendisse cursus urna sit amet metus porttitor, in pharetra quam feugiat. Etiam tempus euismod nulla eget pellentesque.
-              #service-two.tab-pane.fade
-                i.fa.fa-gears.pull-left.fa-4x
-                p
-                  | Nam fringilla quis enim in eleifend. Suspendisse sed lectus mauris. Nam commodo, arcu et posuere placerat, tellus tortor dignissim eros, sit amet eleifend urna lorem sit amet nulla. Praesent sem nibh, vulputate nec congue eu, dapibus vitae augue. Suspendisse cursus urna sit amet metus porttitor, in pharetra quam feugiat. Etiam tempus euismod nulla eget pellentesque.
-                p
-                  | Vestibulum laoreet molestie urna ac vehicula. Phasellus laoreet semper ipsum ac gravida. Sed in varius tortor. Nullam blandit in neque quis aliquet. Fusce volutpat pellentesque sem non convallis. Suspendisse sit amet magna pulvinar, gravida mauris eu, tincidunt massa. Nam lectus mi, viverra non quam nec, mollis malesuada dolor. Vivamus hendrerit nunc interdum turpis egestas, a lobortis odio consequat. Fusce posuere purus quis ligula faucibus lacinia. Curabitur sit amet congue dolor. Duis dapibus hendrerit nunc et gravida. Phasellus mollis, lectus quis ornare aliquam, arcu orci posuere lectus, vehicula bibendum sem ante quis lacus.
-              #service-three.tab-pane.fade
-                i.fa.fa-magic.pull-left.fa-4x
-                p
-                  | Vestibulum laoreet molestie urna ac vehicula. Phasellus laoreet semper ipsum ac gravida. Sed in varius tortor. Nullam blandit in neque quis aliquet. Fusce volutpat pellentesque sem non convallis. Suspendisse sit amet magna pulvinar, gravida mauris eu, tincidunt massa. Nam lectus mi, viverra non quam nec, mollis malesuada dolor. Vivamus hendrerit nunc interdum turpis egestas, a lobortis odio consequat. Fusce posuere purus quis ligula faucibus lacinia. Curabitur sit amet congue dolor. Duis dapibus hendrerit nunc et gravida. Phasellus mollis, lectus quis ornare aliquam, arcu orci posuere lectus, vehicula bibendum sem ante quis lacus.
-                p
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis. Fusce aliquet dui ut felis rhoncus, vitae molestie mauris auctor. Donec pellentesque feugiat leo a adipiscing. Pellentesque quis tristique eros, sed rutrum mauris.
-              #service-four.tab-pane.fade
-                i.fa.fa-flask.pull-left.fa-4x
-                p
-                  | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat diam quis nisl vestibulum dignissim. In hac habitasse platea dictumst. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam placerat nunc ut tellus tristique, non posuere neque iaculis. Fusce aliquet dui ut felis rhoncus, vitae molestie mauris auctor. Donec pellentesque feugiat leo a adipiscing. Pellentesque quis tristique eros, sed rutrum mauris.
-                p
-                  | Nam fringilla quis enim in eleifend. Suspendisse sed lectus mauris. Nam commodo, arcu et posuere placerat, tellus tortor dignissim eros, sit amet eleifend urna lorem sit amet nulla. Praesent sem nibh, vulputate nec congue eu, dapibus vitae augue. Suspendisse cursus urna sit amet metus porttitor, in pharetra quam feugiat. Etiam tempus euismod nulla eget pellentesque.
-              #service-five.tab-pane.fade
-                i.fa.fa-flag.pull-left.fa-4x
-                p
-                  | Nam fringilla quis enim in eleifend. Suspendisse sed lectus mauris. Nam commodo, arcu et posuere placerat, tellus tortor dignissim eros, sit amet eleifend urna lorem sit amet nulla. Praesent sem nibh, vulputate nec congue eu, dapibus vitae augue. Suspendisse cursus urna sit amet metus porttitor, in pharetra quam feugiat. Etiam tempus euismod nulla eget pellentesque.
-                p
-                  | Vestibulum laoreet molestie urna ac vehicula. Phasellus laoreet semper ipsum ac gravida. Sed in varius tortor. Nullam blandit in neque quis aliquet. Fusce volutpat pellentesque sem non convallis. Suspendisse sit amet magna pulvinar, gravida mauris eu, tincidunt massa. Nam lectus mi, viverra non quam nec, mollis malesuada dolor. Vivamus hendrerit nunc interdum turpis egestas, a lobortis odio consequat. Fusce posuere purus quis ligula faucibus lacinia. Curabitur sit amet congue dolor. Duis dapibus hendrerit nunc et gravida. Phasellus mollis, lectus quis ornare aliquam, arcu orci posuere lectus, vehicula bibendum sem ante quis lacus.
-        // /.row
-        // Service Images
-        .row
-          .col-lg-12
-            h2.page-header Service Images
-          -each service, s in com.services
-            .col-sm-4
-              img.img-responsive(onError="this.onerror=null;this.src='/images/annapolis03.jpg';", src='https://s3.amazonaws.com/KyperImageHost/#{com._id}/site/#{service.csrf}#{service.contentType}')
-              h3=service.title
-              p=service.description
-              a.btn.btn-link.btn-sm.pull-right
-                | More
-                i.fa.fa-angle-right
+            -each service, s in com.services
+              if s===0
+                //to make pictures start on second service
+              else
+                .col-sm-4
+                  img.img-responsive(onError="this.onerror=null;this.src='/images/annapolis03.jpg';", src='https://s3.amazonaws.com/KyperImageHost/#{com._id}/site/#{service.csrf}#{service.contentType}')
+                  h3=service.title
+                  p=service.description
+                  a.btn.btn-link.btn-sm.pull-right
+                    | More
+                    i.fa.fa-angle-right
