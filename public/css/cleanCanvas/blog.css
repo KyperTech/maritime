@@ -143,6 +143,7 @@
 #blog .pagination {
 	margin: 35px auto 0;
 	width: 26%;
+	margin-bottom: 70px; /* Added for spacing before footer*/
 }
 
 /* Responsive

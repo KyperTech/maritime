@@ -1,0 +1,107 @@
+extends cleanLayout
+block head
+  link(rel='stylesheet', type='text/css', href='/css/cleanCanvas/portfolio.css')
+  link(rel='stylesheet', type='text/css', href='/css/cleanCanvas/lib/isotope.css')
+block content
+  body
+    #portfolio
+      .container
+        .section_header
+          h3 Portfolio
+        .row
+          .span12
+            #filters_container
+              ul#filters
+                li
+                  a.active(href='#', data-filter='*') All
+                li.separator /
+                li
+                  a(href='#', data-filter='.art') Art
+                li.separator /
+                li
+                  a(href='#', data-filter='.ilustration') Illustration
+                li.separator /
+                li
+                  a(href='#', data-filter='.print') Print
+                li.separator /
+                li
+                  a(href='#', data-filter='.web') Web
+        .row
+          .span12
+            #gallery_container
+              .photo.art.web
+                img(src='img/portfolio1.png')
+                a.mask(href='portfolio-item.html')
+                  h3 Awesome portfolio item
+                  small Art
+                  .more +
+              .photo.ilustration
+                img(src='img/portfolio2.png')
+                a.mask(href='portfolio-item.html')
+                  h3 Awesome portfolio item
+                  small Web Design
+                  .more +
+              .photo.print
+                img(src='img/portfolio3.png')
+                a.mask(href='portfolio-item.html')
+                  h3 Awesome portfolio item
+                  small Print
+                  .more +
+              .photo.art.web
+                img(src='img/portfolio2.png')
+                a.mask(href='portfolio-item.html')
+                  h3 Awesome portfolio item
+                  small Web design
+                  .more +
+              .photo.art.ilustration
+                img(src='img/portfolio1.png')
+                a.mask(href='portfolio-item.html')
+                  h3 Awesome portfolio item
+                  small Ilustration
+                  .more +
+              .photo.print
+                img(src='img/portfolio3.png')
+                a.mask(href='portfolio-item.html')
+                  h3 Awesome portfolio item
+                  small Print
+                  .more +
+              .photo.web
+                img(src='img/portfolio2.png')
+                a.mask(href='portfolio-item.html')
+                  h3 Awesome portfolio item
+                  small Web Design
+                  .more +
+              .photo.art.ilustration.web
+                img(src='img/portfolio3.png')
+                a.mask(href='portfolio-item.html')
+                  h3 Awesome portfolio item
+                  small Art
+                  .more +
+              .photo.print
+                img(src='img/portfolio1.png')
+                a.mask(href='portfolio-item.html')
+                  h3 Awesome portfolio item
+                  small Ilustration
+                  .more +
+    script(src='js/cleanCanvas/jquery.isotope.min.js')
+    script(type='text/javascript')
+      $(function(){
+      var $container = $('#gallery_container'),
+      $filters = $("#filters a");
+      $container.imagesLoaded( function(){
+      $container.isotope({
+        itemSelector : '.photo',
+        masonry: {
+        columnWidth: 102
+        }
+        });
+      });
+      // filter items when filter link is clicked
+      $filters.click(function() {
+      $filters.removeClass("active");
+      $(this).addClass("active");
+      var selector = $(this).data('filter');
+      $container.isotope({ filter: selector });
+      return false;
+      });
+      });

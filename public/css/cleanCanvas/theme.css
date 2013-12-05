@@ -93,7 +93,8 @@ header {
 
 .section_header {
 	width: 100%;
-	margin-bottom: 60px;
+	margin-bottom: 50px;
+	margin-top: 60px; /* Added to make headers work with non-static top bar*/
 }
 .section_header h3 {
 	color: rgb(100, 100, 100);
@@ -300,12 +301,12 @@ header {
 	display: none;
 }
 .socialicons{
-	background: url('../img/socialicons.png') no-repeat;
+	background: url('/img/socialicons.png') no-repeat;
 	width: 265px;
 	height: 36px;
 }
 .socialicons_h{
-	background: url('../img/socialicons_h.png') no-repeat;
+	background: url('/img/socialicons_h.png') no-repeat;
 	width: 265px;
 	height: 36px;
 }

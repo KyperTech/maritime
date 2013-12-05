@@ -93,7 +93,7 @@ exports.services = function(db){
 			var layout = doc.layout
 			console.log(layout)
 			if (layout === "clean"){
-				res.render('cleanHome', {
+				res.render('cleanServices', {
 				"com": doc,
 				title: doc.company
 				});

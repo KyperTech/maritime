@@ -110,6 +110,7 @@
 /*Service Option 3*/
 #process{
 	min-height: 350px;
+	margin-bottom: 180px;
 }
 #process .section_header h3{
 	margin:0;
