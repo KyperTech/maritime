@@ -1,7 +1,7 @@
 !!! 5
 html
   head
-    title Business Template
+    title=com.company
     meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     // Styles
@@ -10,7 +10,7 @@ html
     link(href='/css/cleanCanvas/bootstrap-overrides.css', rel='stylesheet')
     link(rel='stylesheet', type='text/css', href='/css/cleanCanvas/theme.css')
     link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic', rel='stylesheet', type='text/css')
-    link(rel='stylesheet', type='text/css', href='/css/cleanCanvas/lib/animate.css', media='screen, projection')
+    
     //if lt IE 9
     script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
     block head
@@ -23,11 +23,11 @@ html
             span.icon-bar
             span.icon-bar
           a.brand(href='/')
-            strong CLEAN CANVAS
+            strong= com.company
           .nav-collapse.collapse
             ul.nav.pull-right
               li
-                a.active(href='/') HOME
+                a(href='/') HOME
               if com.navAbout
                 li
                   a(href='/about') ABOUT
@@ -49,44 +49,34 @@ html
         .row.info
           .span6.residence
             ul
-              li 2301 East Lamar Blvd. Suite 140. City, Arlington.
-              li United States, Zip Code TX 76006.
+              li= com.address
+              li
+                | #{com.city} , #{com.state} #{com.zip}  
           .span5.touch
             ul
               li
                 strong P.
-                | 1 817 274 2933
+                  | #{com.phone}
               li
                 strong E.
-                a(href='#')  bootstrap@twitter.com
+                a(href=com.email)  #{com.email}
         .row.credits
           .span12
             .row.social
               .span12
-                a.facebook(href='#')
+                a.facebook(href=com.fbUrl)
                   span.socialicons.ico1
                   span.socialicons_h.ico1h
-                a.twitter(href='#')
+                a.twitter(href=com.twitterUrl)
                   span.socialicons.ico2
                   span.socialicons_h.ico2h
                 a.gplus(href='#')
                   span.socialicons.ico3
                   span.socialicons_h.ico3h
-                a.flickr(href='#')
-                  span.socialicons.ico4
-                  span.socialicons_h.ico4h
-                a.pinterest(href='#')
-                  span.socialicons.ico5
-                  span.socialicons_h.ico5h
-                a.dribble(href='#')
-                  span.socialicons.ico6
-                  span.socialicons_h.ico6h
-                a.behance(href='#')
-                  span.socialicons.ico7
-                  span.socialicons_h.ico7h
             .row.copyright
               .span12
-                | © 2013 Clean Canvas. All rights reserved. Theme by Detail Canvas.
+                | © 2013 #{com.company} . All rights reserved. Built By 
+                a(href="http://www.kypertech.com") Kyper
     // Scripts
     script(src='http://code.jquery.com/jquery-latest.js')
     script(src='js/cleanCanvas/bootstrap.min.js')

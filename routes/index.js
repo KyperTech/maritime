@@ -4,7 +4,7 @@
  */
 //var dbConfig = require("../app")(dbId);
 //var dbId = dbConfig.dbId;
-var dbId = "52995a14db7c24000000000d";
+var dbId = "52a2ba2a8e37bd3880000008";
 console.log(dbId);
  
 exports.index = function(db){
@@ -17,7 +17,8 @@ exports.index = function(db){
 			if (layout === "clean"){
 				res.render('cleanHome', {
 				"com": doc,
-				title: doc.company
+				title: doc.company,
+				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
@@ -57,7 +58,8 @@ exports.about = function(db){
 			if (layout === "clean"){
 				res.render('cleanAbout', {
 				"com": doc,
-				title: doc.company
+				title: doc.company,
+				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
@@ -95,7 +97,8 @@ exports.services = function(db){
 			if (layout === "clean"){
 				res.render('cleanServices', {
 				"com": doc,
-				title: doc.company
+				title: doc.company,
+				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
@@ -133,7 +136,8 @@ exports.contact = function(db){
 			if (layout === "clean"){
 				res.render('cleanContact', {
 				"com": doc,
-				title: doc.company
+				title: doc.company,
+				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
@@ -168,7 +172,8 @@ exports.portfolio = function(db){
 			if (layout === "clean"){
 				res.render('cleanPort', {
 				"com": doc,
-				title: doc.company
+				title: doc.company,
+				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
@@ -203,7 +208,8 @@ exports.blog = function(db){
 			if (layout === "clean"){
 				res.render('cleanBlog', {
 				"com": doc,
-				title: doc.company
+				title: doc.company,
+				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){

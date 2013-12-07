@@ -7,6 +7,44 @@ block content
       .container
         .section_header
           h3
+            | Services 
+            span (Option 1)
+        .row.service_wrapper
+          each service, s in com.services
+            if (s == 2)
+              .span4.feature.last
+                .img_box
+                  a(href='#')
+                    img(src='https://s3.amazonaws.com/KyperImageHost/#{site}/site/#{service.csrf}#{service.contentType}')
+                    span.circle
+                      span.plus +
+                .text
+                  h6=service.title 
+                  p=service.description
+            else if (s == 5)
+              .span4.feature.last
+                .img_box
+                  a(href='#')
+                    img(src='https://s3.amazonaws.com/KyperImageHost/#{site}/site/#{service.csrf}#{service.contentType}')
+                    span.circle
+                      span.plus +
+                .text
+                  h6=service.title 
+                  p=service.description
+            else
+              .span4.feature
+                .img_box
+                  a(href='/service')
+                    img(src='https://s3.amazonaws.com/KyperImageHost/#{site}/site/#{service.csrf}#{service.contentType}')
+                    span.circle
+                      span.plus +
+                .text
+                  h6=service.title 
+                  p=service.description
+    #service_1
+      .container
+        .section_header
+          h3
             | Services
             span (Option 1)
         .row.service_wrapper
