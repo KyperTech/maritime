@@ -4,7 +4,7 @@
  */
 //var dbConfig = require("../app")(dbId);
 //var dbId = dbConfig.dbId;
-var dbId = "52a2ba2a8e37bd3880000008";
+var dbId = "52a734cc5ce1a3331d000008";
 console.log(dbId);
  
 exports.index = function(db){
@@ -183,7 +183,7 @@ exports.portfolio = function(db){
 				});
 			}
 			else if (layout === "modBuis"){
-				res.render('modPort', {
+				res.render('modPort3', {
 				"com": doc
 				});
 			}
