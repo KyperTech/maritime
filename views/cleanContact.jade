@@ -1,6 +1,7 @@
 extends cleanLayout
 block head
-  link(rel='stylesheet', type='text/css', href='/css/cleanCanvas/contact.css')
+  link(rel='stylesheet', type='text/css', href='/css/cleanCanvas/contact.css', media="screen")
+  link(rel='stylesheet', type='text/css', href='/css/cleanCanvas/lib/animate.css', media='screen, projection')
 block content
   body
     #contact
@@ -10,21 +11,27 @@ block content
         .row.contact
           p
             | We’d love to hear from you. Interested in working together? Fill out the form below with some info about your project and I will get back to you as soon as I can. Please allow a couple days for me to respond.
-          form
+          form(action='/contact', name='contact', id='contact', method='post')
+            input(type='hidden', name='_csrf', value="#{csrf_token}")
             .row.form
               .span6.box
-                input.name(type='text', placeholder='Name')
-                input.mail(type='text', placeholder='Email')
+                input.name(type='text', placeholder='Name', name='name')
+                input.mail(type='text', placeholder='Email', name='email')
                 input.phone(type='text', placeholder='Phone')
               .span6.box.box_r
-                textarea(placeholder='Type a message here...')
+                textarea(placeholder='Type a message here...', name='message')
             .row.submit
               .span5.box
                 label.checkbox
                   input(type='checkbox')
                   | Sign up for newsletter
               .span3.right
-                input(type='submit', value='Send your message')
+                input(type='submit', value='Send your message', id='submit')
+              if(typeof msg !== 'undefined')
+                  if(!!err)
+                    div(class='msgbox err') #{msg}
+                  else
+                    div(class='msgbox success') #{msg}
       .row.map
         .container
           .span5.box_wrapp
