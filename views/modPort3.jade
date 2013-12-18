@@ -13,10 +13,10 @@ block content
         .row
           each project in com.portfolio.slice(p, p+3)
             .col-md-4.portfolio-item
-              a(href='portfolio-item.html')
+              a(href='/portfolio/'+project._id)
                 img.img-responsive(src='https://s3.amazonaws.com/KyperImageHost/52a734cc5ce1a3331d000008/site/#{project.csrf}#{project.contentType}')
               h3
-                a(href='portfolio-item.html')=project.title
+                a(href='/portfolio/'+project._id)=project.title
               p=project.description
       hr
       .row.text-center

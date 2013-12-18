@@ -44,7 +44,7 @@ app.configure('development', function() {
 
 app.configure('production', function() {
   app.use(express.errorHandler());
-  sendgrid = new SendGrid('mvanlonden', 'lamplamp1');
+  sendgrid = new SendGrid('mvanlonden', 'Cactus1!humus');
 });
 
 app.locals.errors = {};
@@ -61,6 +61,9 @@ app.get('/services', routes.services(db));
 app.get('/contact', routes.contact(db));
 app.get('/blog', routes.blog(db));
 app.get('/portfolio', routes.portfolio(db));
+app.get('/portfolio/:projectId', routes.project(db));
+
+app.param('projectId', routes.loadProject(db));
 //app.get('/bootstrap', routes.bootstrap(db));
 
 function csrf(req, res, next) {

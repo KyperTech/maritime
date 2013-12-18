@@ -4,7 +4,7 @@
  */
 //var dbConfig = require("../app")(dbId);
 //var dbId = dbConfig.dbId;
-var dbId = "52a734cc5ce1a3331d000008";
+var dbId = process.env.DBID;
 console.log(dbId);
  
 exports.index = function(db){
@@ -185,6 +185,56 @@ exports.portfolio = function(db){
 			else if (layout === "modBuis"){
 				res.render('modPort3', {
 				"com": doc
+				});
+			}
+			else if (layout === "casBuis"){
+				res.render('casPort', {
+				"com": doc
+				});
+			}
+			else{
+				res.render('modPort', {
+				"com": doc
+			})
+			}
+		});
+	};
+};
+
+exports.loadProject = function(db){
+  return function(req, res, next, id){
+    var collection = db.get('sites');
+    collection.findOne({'portfolio._id':id}).on('success', function (doc){
+    	console.log(doc);
+      req.project = doc;
+      next();
+    })
+  }
+}
+
+exports.project = function(db){
+	return function(req, res){
+		var collection = db.get('sites');
+		collection.findOne({_id:dbId}).on('success', function(doc){
+		var layout = doc.layout
+			if (layout === "clean"){
+				res.render('cleanPort', {
+				"com": doc,
+				title: doc.company,
+				site: dbId
+				});
+			}
+			else if (layout === "OnePage"){
+				res.render('personal', {
+				"com": doc,
+				title: doc.company
+				});
+			}
+			else if (layout === "modBuis"){
+				res.render('modPortItem', {
+				"project": req.project,
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else if (layout === "casBuis"){
