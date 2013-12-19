@@ -13,11 +13,13 @@ var monk = require('monk');
 var db = monk('mongodb://site:catlove1@dharma.mongohq.com:10094/Boilerplate');
 var SendGrid = require('sendgrid').SendGrid;
 var Validator = require('validator').Validator;
+//var nconf = require('nconf');
 
 var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 4000);
+app.set('DBID', process.env.DBID);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.favicon());
@@ -44,7 +46,7 @@ app.configure('development', function() {
 
 app.configure('production', function() {
   app.use(express.errorHandler());
-  sendgrid = new SendGrid('mvanlonden', 'lamplamp1');
+  sendgrid = new SendGrid('mvanlonden', 'Cactus1!humus');
 });
 
 app.locals.errors = {};
@@ -61,6 +63,9 @@ app.get('/services', routes.services(db));
 app.get('/contact', routes.contact(db));
 app.get('/blog', routes.blog(db));
 app.get('/portfolio', routes.portfolio(db));
+app.get('/portfolio/:projectId', routes.project(db));
+
+app.param('projectId', routes.loadProject(db));
 //app.get('/bootstrap', routes.bootstrap(db));
 
 function csrf(req, res, next) {
@@ -134,3 +139,12 @@ app.post('/contact', csrf, function(req, res) {
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
+
+
+//Trying Env Variables
+//nconf.env()
+//nconf.set('DBID', '52965d4f39745d0000000009');
+//console.log('DBID: ' + nconf.get('DBID'));
+       

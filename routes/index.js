@@ -4,8 +4,9 @@
  */
 //var dbConfig = require("../app")(dbId);
 //var dbId = dbConfig.dbId;
-var dbId = "52a2ba2a8e37bd3880000008";
-console.log(dbId);
+//Heroku variable holds database id number (Exec command must still be written)
+var dbId = process.env.DBID;
+//console.log('DBID:' + process.env.DBID);
  
 exports.index = function(db){
 	return function(req, res){
@@ -183,8 +184,58 @@ exports.portfolio = function(db){
 				});
 			}
 			else if (layout === "modBuis"){
+				res.render('modPort3', {
+				"com": doc
+				});
+			}
+			else if (layout === "casBuis"){
+				res.render('casPort', {
+				"com": doc
+				});
+			}
+			else{
 				res.render('modPort', {
 				"com": doc
+			})
+			}
+		});
+	};
+};
+
+exports.loadProject = function(db){
+  return function(req, res, next, id){
+    var collection = db.get('sites');
+    collection.findOne({'portfolio._id':id}).on('success', function (doc){
+    	console.log(doc);
+      req.project = doc;
+      next();
+    })
+  }
+}
+
+exports.project = function(db){
+	return function(req, res){
+		var collection = db.get('sites');
+		collection.findOne({_id:dbId}).on('success', function(doc){
+		var layout = doc.layout
+			if (layout === "clean"){
+				res.render('cleanPort', {
+				"com": doc,
+				title: doc.company,
+				site: dbId
+				});
+			}
+			else if (layout === "OnePage"){
+				res.render('personal', {
+				"com": doc,
+				title: doc.company
+				});
+			}
+			else if (layout === "modBuis"){
+				res.render('modPortItem', {
+				"project": req.project,
+				"com": doc,
+				title: doc.company
 				});
 			}
 			else if (layout === "casBuis"){
