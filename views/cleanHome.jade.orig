@@ -12,6 +12,17 @@ block content
         .info
           h2 We love to turn ideas into beautiful things.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        img.asset.left-480.sp600.t260.z1(src='img/slides/scene2/left.png')
+        img.asset.left-210.sp600.t213.z2(src='img/slides/scene2/middle.png')
+        img.asset.left60.sp600.t260.z1(src='img/slides/scene2/right.png')
+      article#tour.slide(style='background: url("img/backgrounds/color-splash.jpg") repeat-x top center;')
+        img.asset.left-472.sp650.t210.z3(src='img/slides/scene3/ipad.png')
+        img.asset.left-350.sp450.t135.z2(src='img/slides/scene3/desktop.png')
+        img.asset.left-185.sp550.t220.z1(src='img/slides/scene3/macbook.png')
+=======
+>>>>>>> 2c94caca9a62456dc34db574545a0f6f695a82cd
         img.asset.left-480.sp600.t260.z1(src='https://s3.amazonaws.com/KyperImageHost/cleanCanvas/slides/scene2/left.png')
         img.asset.left-210.sp600.t213.z2(src='https://s3.amazonaws.com/KyperImageHost/cleanCanvas/slides/scene2/middle.png')
         img.asset.left60.sp600.t260.z1(src='https://s3.amazonaws.com/KyperImageHost/cleanCanvas/slides/scene2/right.png')
@@ -20,6 +31,7 @@ block content
         img.asset.left-365.sp600.t270.z4(src='https://s3.amazonaws.com/KyperImageHost/cleanCanvas/slides/scene3/iphone.png')
         img.asset.left-350.sp450.t135.z2(src='https://s3.amazonaws.com/KyperImageHost/cleanCanvas/slides/scene3/desktop.png')
         img.asset.left-185.sp550.t220.z1(src='https://s3.amazonaws.com/KyperImageHost/cleanCanvas/slides/scene3/macbook.png')
+<<<<<<< HEAD
 =======
         img.asset.left-480.sp600.t260.z1(src='img/slides/scene2/left.png')
         img.asset.left-210.sp600.t213.z2(src='img/slides/scene2/middle.png')
@@ -29,6 +41,9 @@ block content
         img.asset.left-350.sp450.t135.z2(src='img/slides/scene3/desktop.png')
         img.asset.left-185.sp550.t220.z1(src='img/slides/scene3/macbook.png')
 >>>>>>> 1db35266696034734a41bc4f31167146e85d8f48
+=======
+>>>>>>> dd60bab33c00138dc97dbda17c575ac8dbfaf4b5
+>>>>>>> 2c94caca9a62456dc34db574545a0f6f695a82cd
         .info
           h2 Fully Responsive theme
           a(href='/features') TOUR THE PRODUCT
