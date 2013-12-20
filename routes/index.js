@@ -59,29 +59,36 @@ exports.about = function(db){
 			if (layout === "clean"){
 				res.render('cleanAbout', {
 				"com": doc,
-				title: doc.company,
+				title: doc.company + ' | About',
 				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc,
-				title: doc.company
+				title: doc.company + ' | About',
+				site: dbId
 				});
 			}
 			else if (layout === "modBuis"){
 				res.render('modAbout', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | About',
+				site: dbId
 				});
 			}
 			else if (layout === "casBuis"){
 				res.render('casAbout', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | About',
+				site: dbId
 				});
 			}
 			else{
 				res.render('index', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | About',
+				site: dbId
 			})
 			}
 			console.log(layout)
@@ -98,30 +105,36 @@ exports.services = function(db){
 			if (layout === "clean"){
 				res.render('cleanServices', {
 				"com": doc,
-				title: doc.company,
+				title: doc.company + ' | Services',
 				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc,
-				title: doc.company
+				title: doc.company + ' | Services',
+				site: dbId
 				});
 			}
 			else if (layout === "modBuis"){
 				res.render('modServices', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Services',
+				site: dbId
 				});
 			}
 			else if (layout === "casBuis"){
 				res.render('casServices', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Services',
+				site: dbId
 				});
 			}
 			else{
 				res.render('index', {
-				"com": doc
-
+				"com": doc,
+				title: doc.company + ' | Services',
+				site: dbId
 			})
 			}
 		});
@@ -137,29 +150,36 @@ exports.contact = function(db){
 			if (layout === "clean"){
 				res.render('cleanContact', {
 				"com": doc,
-				title: doc.company,
+				title: doc.company + ' | Conatct',
 				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc,
-				title: doc.company
+				title: doc.company + ' | Conatct',
+				site: dbId
 				});
 			}
 			else if (layout === "modBuis"){
 				res.render('modContact', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Conatct',
+				site: dbId
 				});
 			}
 			else if (layout === "casBuis"){
 				res.render('modContact', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Conatct',
+				site: dbId
 				});
 			}
 			else{console.log('wrong render')
 				res.render('index', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Conatct',
+				site: dbId
 			})
 			}
 		});
@@ -173,29 +193,36 @@ exports.portfolio = function(db){
 			if (layout === "clean"){
 				res.render('cleanPort', {
 				"com": doc,
-				title: doc.company,
+				title: doc.company + ' | Portfolio',
 				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc,
-				title: doc.company
+				title: doc.company + ' | Portfolio',
+				site: dbId
 				});
 			}
 			else if (layout === "modBuis"){
 				res.render('modPort3', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Portfolio',
+				site: dbId
 				});
 			}
 			else if (layout === "casBuis"){
 				res.render('casPort', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Portfolio',
+				site: dbId
 				});
 			}
 			else{
 				res.render('modPort', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Portfolio',
+				site: dbId
 			})
 			}
 		});
@@ -222,30 +249,37 @@ exports.project = function(db){
 				res.render('cleanPort', {
 				"com": doc,
 				title: doc.company,
+				//Item specific title(not working yet):   title: doc.company + ' | ' + doc.portfolio.title,
 				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc,
-				title: doc.company
+				title: doc.company,
+				site: dbId
 				});
 			}
 			else if (layout === "modBuis"){
 				res.render('modPortItem', {
 				"project": req.project,
 				"com": doc,
-				title: doc.company
+				title: doc.company,
+				site: dbId
 				});
 			}
 			else if (layout === "casBuis"){
 				res.render('casPort', {
-				"com": doc
+				"com": doc,
+				title: doc.company,
+				site: dbId
 				});
 			}
 			else{
 				res.render('modPort', {
-				"com": doc
+				"com": doc,
+				title: doc.company,
+				site: dbId
 			})
 			}
 		});
@@ -259,30 +293,36 @@ exports.blog = function(db){
 			if (layout === "clean"){
 				res.render('cleanBlog', {
 				"com": doc,
-				title: doc.company,
+				title: doc.company + ' | Blog',
 				site: dbId
 				});
 			}
 			else if (layout === "OnePage"){
 				res.render('personal', {
 				"com": doc,
-				title: doc.company
+				title: doc.company + ' | Blog',
+				site: dbId
 				});
 			}
 			else if (layout === "modBuis"){
 				res.render('modBlog', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Blog',
+				site: dbId
 				});
 			}
-			//needs to be changed back to casAbout *****
 			else if (layout === "casBuis"){
 				res.render('casBlog', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Blog',
+				site: dbId
 				});
 			}
 			else{
 				res.render('modBlog', {
-				"com": doc
+				"com": doc,
+				title: doc.company + ' | Blog',
+				site: dbId
 			})
 			}
 		});
