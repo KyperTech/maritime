@@ -5,8 +5,8 @@
 //var dbConfig = require("../app")(dbId);
 //var dbId = dbConfig.dbId;
 //Heroku variable holds database id number (Exec command must still be written)
-var dbId = process.env.DBID || '52b4ab1bcaefb4080000000f';
-//console.log('DBID:' + process.env.DBID);
+var dbId = process.env.DBID;
+console.log('DBID:' + process.env.DBID);
  
 exports.index = function(db){
 	return function(req, res){
@@ -234,7 +234,7 @@ exports.loadProject = function(db){
     var collection = db.get('sites');
     collection.findOne({'portfolio._id':id}).on('success', function (doc){
     	console.log(doc);
-      req.project = doc;
+     	req.project = doc;
       next();
     })
   }

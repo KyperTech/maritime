@@ -3,26 +3,23 @@ block content
   body
     .container
       .row
-          .col-lg-12
-            h1.page-header
-              | Single Portfolio Item
-              small Explain Your Work
-            ol.breadcrumb
-              li
-                a(href='index.html') Home
-              li.active Single Portfolio Item
+        .col-lg-12
+          h1.page-header
+            | Single Portfolio Item
+            small Explain Your Work
         .row
-          .col-md-8
-            img.img-responsive(src='http://placehold.it/750x500')
-          .col-md-4
-            h3 Project Description
-            p In Depth Project Description
-            h3 Project Details
-            ul
-              li Lorem Ipsum
-              li Dolor Sit Amet
-              li Consectetur
-              li Adipiscing Elit
+          each project in com.portfolio.slice(p)
+            .col-md-8
+              img.img-responsive(src='https://s3.amazonaws.com/KyperImageHost/#{site}/site/#{project.csrf}#{project.contentType}')
+            .col-md-4
+              h3 Project Description
+              p In Depth Project Description
+              h3 Project Details
+              ul
+                li Lorem Ipsum
+                li Dolor Sit Amet
+                li Consectetur
+                li Adipiscing Elit
         .row
           .col-lg-12
             h3.page-header Related Projects
