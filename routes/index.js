@@ -5,8 +5,8 @@
 //var dbConfig = require("../app")(dbId);
 //var dbId = dbConfig.dbId;
 //Heroku variable holds database id number (Exec command must still be written)
-var dbId = process.env.DBID;
-console.log('DBID:' + process.env.DBID);
+var dbId = process.env.DBID || "52b4ab1bcaefb4080000000f";
+console.log('DBID:' + dbId);
  
 exports.index = function(db){
 	return function(req, res){
